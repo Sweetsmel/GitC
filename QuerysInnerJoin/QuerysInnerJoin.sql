@@ -29,7 +29,7 @@ Order by 'Quantidade de marcas que Giomar cadastrou' asc;
 --Trazer somente a quantidade de marcas que Felipe e Giomar cadastraram :
 
 select count(*) as 'Quantidade de marcas que Felipe e Giomar cadastraram'
-from Marcas
+from Marcas;
 --where UsuInc = 1 OR UsuInc = 2;
 
 ------------------------------------------------------------
@@ -65,7 +65,7 @@ Order by 'Quantidade de carros que Giomar cadastrou' asc;
 --Trazer somente a quantidade de carros que Felipe e Giomar cadastraram :
 
 select count(*) as 'Quantidade de carros que Felipe e Giomar cadastraram'
-from Carros
+from Carros;
 --where UsuInc = 1 OR UsuInc = 2;
 
 ------------------------------------------------------------
@@ -191,7 +191,7 @@ from Vendas V
 inner join Usuarios U on U.Id = V.UsuInc
 where U.Id = 1
 
-group by U.Usuario
+group by U.Usuario;
 
 
 select 
@@ -201,7 +201,7 @@ from Vendas V
 inner join Usuarios U on U.Id = V.UsuInc
 where U.Id = 2
 
-group by U.Usuario
+group by U.Usuario;
 
 -----------------------------------------------------------
 
@@ -214,7 +214,7 @@ from Vendas V
 inner join Usuarios U on U.Id = V.UsuInc
 where U.Id = 1
 
-group by U.Usuario
+group by U.Usuario;
 
 
 select 
@@ -224,7 +224,7 @@ from Vendas V
 inner join Usuarios U on U.Id = V.UsuInc
 where U.Id = 2
 
-group by U.Usuario
+group by U.Usuario;
 
 -----------------------------------------------------------
 
