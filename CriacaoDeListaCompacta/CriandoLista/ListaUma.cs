@@ -22,7 +22,7 @@ namespace CriacaoDeListaCompacta.CriandoLista
             for (int i = 0; i < novaLista.GetLength(0); i++)
             {
 
-                novaLista[i,0] = DateTime.Now.ToString($"dd/MM/yyyy");
+                novaLista[i, 0] = DateTime.Now.ToString($"dd/MM/yyyy");
                 novaLista[i, 1] = DateTime.Now.ToString($"hh:mm:ss.fff");
 
                 Console.WriteLine($"Data: {novaLista[i, 0]} e Hora: {novaLista[i, 1]}");
@@ -30,7 +30,9 @@ namespace CriacaoDeListaCompacta.CriandoLista
 
             //foreach (var item in novaLista)
             //    Console.WriteLine(item);
-
+        }
+        public void MostrarLista()
+        { 
             for (int i = 0; i < novaLista.GetLength(0); i++)
             {
                 //novaLista[i,0] = string.Empty;

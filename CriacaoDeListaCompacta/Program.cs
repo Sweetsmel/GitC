@@ -13,6 +13,9 @@ namespace CriacaoDeListaCompacta
         {
             var novaLista = new ListaUma();
 
+            novaLista.MostrarLista();
+
+
             Console.ReadKey();
         }
     }
