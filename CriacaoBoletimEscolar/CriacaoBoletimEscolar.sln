@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29102.190
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CriacaoBoletimEscolar", "CriacaoBoletimEscolar.csproj", "{18D0085E-7B8B-48A2-B944-9F0C30C09141}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FinalizacaoBoletimEscolar", "..\FinalizacaoBoletimEscolar\FinalizacaoBoletimEscolar.csproj", "{86D4F51C-E645-4B8A-A85B-F0B974472916}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{18D0085E-7B8B-48A2-B944-9F0C30C09141}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{18D0085E-7B8B-48A2-B944-9F0C30C09141}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{18D0085E-7B8B-48A2-B944-9F0C30C09141}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{18D0085E-7B8B-48A2-B944-9F0C30C09141}.Release|Any CPU.Build.0 = Release|Any CPU
+		{86D4F51C-E645-4B8A-A85B-F0B974472916}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{86D4F51C-E645-4B8A-A85B-F0B974472916}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{86D4F51C-E645-4B8A-A85B-F0B974472916}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{86D4F51C-E645-4B8A-A85B-F0B974472916}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {FA8EE37F-1566-4840-A5BC-F8EDA2776B4D}
+	EndGlobalSection
+EndGlobal
