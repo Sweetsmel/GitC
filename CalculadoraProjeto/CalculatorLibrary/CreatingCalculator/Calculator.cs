@@ -24,5 +24,9 @@ namespace CalculatorLibrary.CreatingCalculator
         {
             return valor1 / valor2;
         }
+        public int CalculatorRet(int alturaH, int baseB)
+        {
+
+        }
     }
 }
