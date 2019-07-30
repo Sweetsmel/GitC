@@ -31,10 +31,14 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TelaDeCadastro));
             this.lbNome = new System.Windows.Forms.Label();
             this.lbIdade = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.buttonSalvar = new System.Windows.Forms.Button();
             this.tbxNome = new System.Windows.Forms.TextBox();
             this.nrIdade = new System.Windows.Forms.NumericUpDown();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.nrIdade)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // lbNome
@@ -57,17 +61,18 @@
             this.lbIdade.TabIndex = 1;
             this.lbIdade.Text = "Idade:";
             // 
-            // button1
+            // buttonSalvar
             // 
-            this.button1.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(160, 173);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(349, 55);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Salvar";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.Button1_Click);
+            this.buttonSalvar.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.buttonSalvar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonSalvar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonSalvar.Location = new System.Drawing.Point(160, 347);
+            this.buttonSalvar.Name = "buttonSalvar";
+            this.buttonSalvar.Size = new System.Drawing.Size(349, 55);
+            this.buttonSalvar.TabIndex = 2;
+            this.buttonSalvar.Text = "Salvar";
+            this.buttonSalvar.UseVisualStyleBackColor = false;
+            this.buttonSalvar.Click += new System.EventHandler(this.Button1_Click);
             // 
             // tbxNome
             // 
@@ -83,22 +88,48 @@
             this.nrIdade.Size = new System.Drawing.Size(255, 22);
             this.nrIdade.TabIndex = 4;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(2, 1);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(142, 411);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBox1.TabIndex = 5;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.PictureBox1_Click);
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(225, 1);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(469, 411);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureBox2.TabIndex = 6;
+            this.pictureBox2.TabStop = false;
+            // 
             // TelaDeCadastro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(696, 383);
+            this.ClientSize = new System.Drawing.Size(698, 414);
             this.Controls.Add(this.nrIdade);
             this.Controls.Add(this.tbxNome);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.buttonSalvar);
             this.Controls.Add(this.lbIdade);
             this.Controls.Add(this.lbNome);
+            this.Controls.Add(this.pictureBox2);
+            this.Controls.Add(this.pictureBox1);
             this.Name = "TelaDeCadastro";
             this.Text = "TelaDeCadastro";
             ((System.ComponentModel.ISupportInitialize)(this.nrIdade)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -108,8 +139,10 @@
 
         private System.Windows.Forms.Label lbNome;
         private System.Windows.Forms.Label lbIdade;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button buttonSalvar;
         private System.Windows.Forms.TextBox tbxNome;
         private System.Windows.Forms.NumericUpDown nrIdade;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }
