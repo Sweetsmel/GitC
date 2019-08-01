@@ -32,6 +32,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.deletCommand = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.editar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.modeloDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.anoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -43,15 +44,17 @@
             this.datAltDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.carrosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.querysInnerJoinDataSet1 = new DataGridViewExample.QuerysInnerJoinDataSet1();
-            this.frmAdicionar = new System.Windows.Forms.Button();
             this.frmMarcas = new System.Windows.Forms.Button();
             this.frmVendas = new System.Windows.Forms.Button();
             this.frmUsuarios = new System.Windows.Forms.Button();
             this.carrosTableAdapter = new DataGridViewExample.QuerysInnerJoinDataSet1TableAdapters.CarrosTableAdapter();
             this.frmlixeira = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.carrosBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.querysInnerJoinDataSet1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
@@ -62,6 +65,7 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.deletCommand,
+            this.editar,
             this.idDataGridViewTextBoxColumn,
             this.modeloDataGridViewTextBoxColumn,
             this.anoDataGridViewTextBoxColumn,
@@ -72,12 +76,12 @@
             this.datIncDataGridViewTextBoxColumn,
             this.datAltDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.carrosBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 327);
+            this.dataGridView1.Location = new System.Drawing.Point(12, 467);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(1055, 334);
+            this.dataGridView1.Size = new System.Drawing.Size(1300, 184);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView1_CellContentClick);
             // 
@@ -89,6 +93,16 @@
             this.deletCommand.Name = "deletCommand";
             this.deletCommand.ReadOnly = true;
             this.deletCommand.Width = 125;
+            // 
+            // editar
+            // 
+            this.editar.HeaderText = "Editar";
+            this.editar.MinimumWidth = 6;
+            this.editar.Name = "editar";
+            this.editar.ReadOnly = true;
+            this.editar.Text = "Editar";
+            this.editar.UseColumnTextForButtonValue = true;
+            this.editar.Width = 125;
             // 
             // idDataGridViewTextBoxColumn
             // 
@@ -181,24 +195,13 @@
             this.querysInnerJoinDataSet1.DataSetName = "QuerysInnerJoinDataSet1";
             this.querysInnerJoinDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // frmAdicionar
-            // 
-            this.frmAdicionar.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.frmAdicionar.Cursor = System.Windows.Forms.Cursors.No;
-            this.frmAdicionar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.frmAdicionar.Location = new System.Drawing.Point(12, 9);
-            this.frmAdicionar.Name = "frmAdicionar";
-            this.frmAdicionar.Size = new System.Drawing.Size(166, 37);
-            this.frmAdicionar.TabIndex = 1;
-            this.frmAdicionar.Text = "Adicionar";
-            this.frmAdicionar.UseVisualStyleBackColor = false;
-            this.frmAdicionar.Click += new System.EventHandler(this.FrmAdicionar_Click);
-            // 
             // frmMarcas
             // 
-            this.frmMarcas.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.frmMarcas.BackColor = System.Drawing.Color.Transparent;
             this.frmMarcas.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.frmMarcas.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.frmMarcas.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.frmMarcas.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.frmMarcas.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.frmMarcas.Location = new System.Drawing.Point(184, 10);
             this.frmMarcas.Name = "frmMarcas";
             this.frmMarcas.Size = new System.Drawing.Size(166, 36);
@@ -209,9 +212,11 @@
             // 
             // frmVendas
             // 
-            this.frmVendas.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.frmVendas.BackColor = System.Drawing.Color.Transparent;
             this.frmVendas.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.frmVendas.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.frmVendas.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.frmVendas.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.frmVendas.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.frmVendas.Location = new System.Drawing.Point(528, 9);
             this.frmVendas.Name = "frmVendas";
             this.frmVendas.Size = new System.Drawing.Size(166, 37);
@@ -222,9 +227,11 @@
             // 
             // frmUsuarios
             // 
-            this.frmUsuarios.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.frmUsuarios.BackColor = System.Drawing.Color.Transparent;
             this.frmUsuarios.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.frmUsuarios.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.frmUsuarios.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.frmUsuarios.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.frmUsuarios.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.frmUsuarios.Location = new System.Drawing.Point(356, 9);
             this.frmUsuarios.Name = "frmUsuarios";
             this.frmUsuarios.Size = new System.Drawing.Size(166, 37);
@@ -239,17 +246,43 @@
             // 
             // frmlixeira
             // 
-            this.frmlixeira.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.frmlixeira.BackColor = System.Drawing.Color.Transparent;
             this.frmlixeira.Cursor = System.Windows.Forms.Cursors.Hand;
             this.frmlixeira.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.frmlixeira.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.frmlixeira.Location = new System.Drawing.Point(979, 9);
+            this.frmlixeira.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.frmlixeira.Location = new System.Drawing.Point(1216, 94);
             this.frmlixeira.Name = "frmlixeira";
-            this.frmlixeira.Size = new System.Drawing.Size(88, 37);
+            this.frmlixeira.Size = new System.Drawing.Size(92, 29);
             this.frmlixeira.TabIndex = 5;
             this.frmlixeira.Text = "Lixeira";
             this.frmlixeira.UseVisualStyleBackColor = false;
             this.frmlixeira.Click += new System.EventHandler(this.Button1_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox1.Location = new System.Drawing.Point(1224, 10);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(73, 94);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 7;
+            this.pictureBox1.TabStop = false;
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.Transparent;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.button1.Location = new System.Drawing.Point(12, 9);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(166, 36);
+            this.button1.TabIndex = 8;
+            this.button1.Text = "Adicionar";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.Button1_Click_1);
             // 
             // Form1
             // 
@@ -257,13 +290,14 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.ClientSize = new System.Drawing.Size(1079, 673);
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(1324, 672);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.frmlixeira);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.frmUsuarios);
             this.Controls.Add(this.frmVendas);
             this.Controls.Add(this.frmMarcas);
-            this.Controls.Add(this.frmAdicionar);
             this.Controls.Add(this.dataGridView1);
             this.Name = "Form1";
             this.Text = "Form1";
@@ -271,6 +305,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.carrosBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.querysInnerJoinDataSet1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -278,14 +313,15 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Button frmAdicionar;
         private QuerysInnerJoinDataSet1 querysInnerJoinDataSet1;
         private System.Windows.Forms.BindingSource carrosBindingSource;
         private QuerysInnerJoinDataSet1TableAdapters.CarrosTableAdapter carrosTableAdapter;
         private System.Windows.Forms.Button frmMarcas;
         private System.Windows.Forms.Button frmVendas;
         private System.Windows.Forms.Button frmUsuarios;
+        private System.Windows.Forms.Button frmlixeira;
         private System.Windows.Forms.DataGridViewButtonColumn deletCommand;
+        private System.Windows.Forms.DataGridViewButtonColumn editar;
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn modeloDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn anoDataGridViewTextBoxColumn;
@@ -295,7 +331,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn usuAltDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn datIncDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn datAltDataGridViewTextBoxColumn;
-        private System.Windows.Forms.Button frmlixeira;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button button1;
     }
 }
 

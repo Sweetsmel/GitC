@@ -46,6 +46,30 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Adicionar\frmAdicionar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Adicionar\frmAdicionar.Designer.cs">
+      <DependentUpon>frmAdicionar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Edicao\frmEdicaoCarro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Edicao\frmEdicaoCarro.Designer.cs">
+      <DependentUpon>frmEdicaoCarro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Edicao\frmEdicaoUsuarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Edicao\frmEdicaoUsuarios.Designer.cs">
+      <DependentUpon>frmEdicaoUsuarios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Edicao\frmEdicaoVendas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Edicao\frmEdicaoVendas.Designer.cs">
+      <DependentUpon>frmEdicaoVendas.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -70,6 +94,16 @@
     <Compile Include="Form4.Designer.cs">
       <DependentUpon>Form4.cs</DependentUpon>
     </Compile>
+    <Compile Include="Edicao\frmEdicaoMarcas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Edicao\frmEdicaoMarcas.Designer.cs">
+      <DependentUpon>frmEdicaoMarcas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Carro.cs" />
+    <Compile Include="Model\Marcas.cs" />
+    <Compile Include="Model\Usuarios.cs" />
+    <Compile Include="Model\Vendas.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="QuerysInnerJoinDataSet1.cs">
@@ -86,6 +120,18 @@
     <Compile Include="Lixeira.Designer.cs">
       <DependentUpon>Lixeira.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Adicionar\frmAdicionar.resx">
+      <DependentUpon>frmAdicionar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Edicao\frmEdicaoCarro.resx">
+      <DependentUpon>frmEdicaoCarro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Edicao\frmEdicaoUsuarios.resx">
+      <DependentUpon>frmEdicaoUsuarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Edicao\frmEdicaoVendas.resx">
+      <DependentUpon>frmEdicaoVendas.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -97,6 +143,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form4.resx">
       <DependentUpon>Form4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Edicao\frmEdicaoMarcas.resx">
+      <DependentUpon>frmEdicaoMarcas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

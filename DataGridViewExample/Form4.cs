@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DataGridViewExample.Edicao;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -24,9 +25,7 @@ namespace DataGridViewExample
 
         private void Form4_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'querysInnerJoinDataSet1.Vendas' table. You can move, or remove it, as needed.
             this.vendasTableAdapter.CustomQuery(this.querysInnerJoinDataSet1.Vendas);
-
         }
 
         private void DataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -42,10 +41,20 @@ namespace DataGridViewExample
                         this.vendasTableAdapter.DeleteQuery(vendasSelect.Id);
                     }
                     break;
+                case 1:
+                    {
+                        frmEdicaoVendas editVenda = new frmEdicaoVendas();
+                        editVenda.VendasRow = vendasSelect;
+                        editVenda.ShowDialog();
+
+                        this.vendasTableAdapter.Update(editVenda.VendasRow);
+                    }
+                    break;
+
+                  
+
             }
-
             this.vendasTableAdapter.CustomQuery(querysInnerJoinDataSet1.Vendas);
-
         }
     }
 }

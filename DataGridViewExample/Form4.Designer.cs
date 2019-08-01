@@ -29,9 +29,11 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form4));
             this.button1 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.deletCommand = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.editCommand = new System.Windows.Forms.DataGridViewButtonColumn();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.carroDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.quantidadeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -69,6 +71,7 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.deletCommand,
+            this.editCommand,
             this.idDataGridViewTextBoxColumn,
             this.carroDataGridViewTextBoxColumn,
             this.quantidadeDataGridViewTextBoxColumn,
@@ -96,6 +99,16 @@
             this.deletCommand.Name = "deletCommand";
             this.deletCommand.ReadOnly = true;
             this.deletCommand.Width = 125;
+            // 
+            // editCommand
+            // 
+            this.editCommand.HeaderText = "Editar";
+            this.editCommand.MinimumWidth = 6;
+            this.editCommand.Name = "editCommand";
+            this.editCommand.ReadOnly = true;
+            this.editCommand.Text = "Editar";
+            this.editCommand.UseColumnTextForButtonValue = true;
+            this.editCommand.Width = 125;
             // 
             // idDataGridViewTextBoxColumn
             // 
@@ -196,6 +209,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.button1);
@@ -217,6 +232,7 @@
         private System.Windows.Forms.BindingSource vendasBindingSource;
         private QuerysInnerJoinDataSet1TableAdapters.VendasTableAdapter vendasTableAdapter;
         private System.Windows.Forms.DataGridViewButtonColumn deletCommand;
+        private System.Windows.Forms.DataGridViewButtonColumn editCommand;
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn carroDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn quantidadeDataGridViewTextBoxColumn;

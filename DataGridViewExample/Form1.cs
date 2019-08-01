@@ -1,4 +1,6 @@
-﻿using System;
+﻿using DataGridViewExample.Adicionar;
+using DataGridViewExample.Edicao;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -19,7 +21,6 @@ namespace DataGridViewExample
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'querysInnerJoinDataSet1.Carros' table. You can move, or remove it, as needed.
             this.carrosTableAdapter.CustomQuery(this.querysInnerJoinDataSet1.Carros);
         }
 
@@ -40,32 +41,61 @@ namespace DataGridViewExample
         }
         private void FrmAdicionar_Click(object sender, EventArgs e)
         {
-
         }
         private void DataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             var carSelect = ((System.Data.DataRowView)                              //foi isolado pois são objetos diferentes "( )"
                 this.dataGridView1.Rows[e.RowIndex].DataBoundItem).Row
             as DataGridViewExample.QuerysInnerJoinDataSet1.CarrosRow;               //*DataGridViewExample = nome do namespace           
-            //Este código ta convertendo toda a linha selecionada para uma
-
-            switch(e.ColumnIndex)
+                                                                                    //Este código ta convertendo toda a linha selecionada para uma
+            switch (e.ColumnIndex)
             {   
-                case 0: //Coluna deletar
+                case 0: //Deletar
                     {
                         this.carrosTableAdapter.DeleteQuery(carSelect.Id);
                     } break;
+                case 1: //Editar
+                    {
+                        frmEdicaoCarros editCar = new frmEdicaoCarros();
+                        editCar.CarrosRow = carSelect;                            //vai selecionar o carro e depois fazer a edição
+                        editCar.ShowDialog();                                     //se for apenas ".Show();", morre o contexto. não realiza o desejado.
+
+                        this.carrosTableAdapter.Update(editCar.CarrosRow);        //atualiza todos os campos
+
+                        /*this.carrosTableAdapter.UpdateQuery1(editCar.CarrosRow.Modelo,
+                                                             editCar.CarrosRow.Ano.ToString(),
+                                                             editCar.CarrosRow.Marca,
+                                                             editCar.CarrosRow.UsuAlt,
+                                                             DateTime.Now,
+                                                             editCar.CarrosRow.Id);*/
+                    } break;
             }
 
-            this.carrosTableAdapter.CustomQuery(querysInnerJoinDataSet1.Carros);
+            this.carrosTableAdapter.CustomQuery(querysInnerJoinDataSet1.Carros);         //antes era Custon
 
         }
-
         private void Button1_Click(object sender, EventArgs e)
         {
             Lixeira frmlixeira = new Lixeira();
             frmlixeira.ShowDialog();
         }
 
+        private void Button1_Click_1(object sender, EventArgs e)
+        {
+            frmAdicionar formAdd = new frmAdicionar();
+            formAdd.ShowDialog();
+
+            this.carrosTableAdapter.Insert (
+                                        formAdd.carrosRow.Modelo,
+                                        formAdd.carrosRow.Ano,
+                                        formAdd.carrosRow.Marca,
+                                        true,
+                                        1,
+                                        1,
+                                        DateTime.Now,
+                                        DateTime.Now
+            );
+            this.carrosTableAdapter.Fill(this.querysInnerJoinDataSet1.Carros);
+        }
     }
 }

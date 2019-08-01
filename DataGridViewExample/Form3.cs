@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DataGridViewExample.Edicao;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -20,7 +21,7 @@ namespace DataGridViewExample
         private void Form3_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'querysInnerJoinDataSet1.Usuarios' table. You can move, or remove it, as needed.
-            this.usuariosTableAdapter.Fill(this.querysInnerJoinDataSet1.Usuarios);
+            this.usuariosTableAdapter.CustomQuery(this.querysInnerJoinDataSet1.Usuarios);
 
         }
 
@@ -35,6 +36,16 @@ namespace DataGridViewExample
                 case 0: //Coluna deletar
                     {
                         this.usuariosTableAdapter.DeleteQuery(userSelect.Id);
+                    }
+                    break;
+                case 1: //Editar
+                    {
+                        frmEdicaoUsuarios editUsu = new frmEdicaoUsuarios();
+                        editUsu.UsuariosRow = userSelect;
+                        editUsu.ShowDialog();
+
+                        this.usuariosTableAdapter.Update(editUsu.UsuariosRow);
+
                     }
                     break;
             }

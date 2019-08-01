@@ -37,6 +37,16 @@ namespace DataGridViewExample
                         this.marcasTableAdapter.DeleteQuery(marcasSelect.Id);
                     }
                     break;
+                case 1: //Editar
+                    {
+                        frmEdicaoMarcas editMarc = new frmEdicaoMarcas();
+                        editMarc.MarcasRow = marcasSelect;
+                        editMarc.ShowDialog();
+
+                        this.marcasTableAdapter.Update(editMarc.MarcasRow);
+
+                    }
+                    break;
             }
 
             this.marcasTableAdapter.CustomQuery(querysInnerJoinDataSet1.Marcas);
