@@ -11,38 +11,32 @@ using System.Windows.Forms;
 
 namespace DataGridViewExample.Adicionar
 {
-    public partial class frmAdicionar : Form
+    public partial class frmAdicionarUsuarios : Form
     {
-        public frmAdicionar()
+        public frmAdicionarUsuarios()
         {
             InitializeComponent();
         }
 
-        public Carro carrosRow;
+        public Usuarios usuariosRow;
 
-        private void FrmAdicionar_Load(object sender, EventArgs e)
+        private void FrmAdicionarUsuarios_Load(object sender, EventArgs e)
         {
-            this.marcasTableAdapter.Fill(this.querysInnerJoinDataSet1.Marcas);
 
         }
+
         private void Button1_Click(object sender, EventArgs e)
         {
-            carrosRow = new Carro
+            usuariosRow = new Usuarios
             {
 
-                Modelo = tbwModelAdd.Text,
-                Ano = dtYearAdd.Value,
-                Marca = (int)cbMarcAdd.SelectedValue
-        };
+                Usuario = tbxUserAdd.Text
+
+            };
             this.Close();
         }
 
         private void TextBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void ComboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }

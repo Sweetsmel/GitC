@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace DataGridViewExample.Model
 {
-    class Usuarios
+    public class Usuarios
     {
-        public string Usuarios { get; set; }
+        public string Usuario { get; set; }
         public bool Ativo { get; set; } = true;
         public int UsuInc { get; set; }
         public int UsuAlt { get; set; }

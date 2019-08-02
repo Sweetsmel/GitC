@@ -865,6 +865,8 @@ namespace DataGridViewExample {
             
             private global::System.Data.DataColumn columnDeletCommand;
             
+            private global::System.Data.DataColumn columnRestartCommand;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public MarcasDataTable() {
@@ -964,6 +966,14 @@ namespace DataGridViewExample {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn RestartCommandColumn {
+                get {
+                    return this.columnRestartCommand;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -999,7 +1009,7 @@ namespace DataGridViewExample {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public MarcasRow AddMarcasRow(string Nome, bool Ativo, int UsuInc, int UsuAlt, System.DateTime DatInc, System.DateTime DatAlt, string DeletCommand) {
+            public MarcasRow AddMarcasRow(string Nome, bool Ativo, int UsuInc, int UsuAlt, System.DateTime DatInc, System.DateTime DatAlt, string DeletCommand, string RestartCommand) {
                 MarcasRow rowMarcasRow = ((MarcasRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -1009,7 +1019,8 @@ namespace DataGridViewExample {
                         UsuAlt,
                         DatInc,
                         DatAlt,
-                        DeletCommand};
+                        DeletCommand,
+                        RestartCommand};
                 rowMarcasRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowMarcasRow);
                 return rowMarcasRow;
@@ -1047,6 +1058,7 @@ namespace DataGridViewExample {
                 this.columnDatInc = base.Columns["DatInc"];
                 this.columnDatAlt = base.Columns["DatAlt"];
                 this.columnDeletCommand = base.Columns["DeletCommand"];
+                this.columnRestartCommand = base.Columns["RestartCommand"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1068,6 +1080,8 @@ namespace DataGridViewExample {
                 base.Columns.Add(this.columnDatAlt);
                 this.columnDeletCommand = new global::System.Data.DataColumn("DeletCommand", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnDeletCommand);
+                this.columnRestartCommand = new global::System.Data.DataColumn("RestartCommand", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnRestartCommand);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnId}, true));
                 this.columnId.AutoIncrement = true;
@@ -1084,6 +1098,7 @@ namespace DataGridViewExample {
                 this.columnDatInc.AllowDBNull = false;
                 this.columnDatAlt.AllowDBNull = false;
                 this.columnDeletCommand.DefaultValue = ((string)("Deletar"));
+                this.columnRestartCommand.DefaultValue = ((string)("Restaurar"));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1233,6 +1248,8 @@ namespace DataGridViewExample {
             
             private global::System.Data.DataColumn columnDeletCommand;
             
+            private global::System.Data.DataColumn columnRestartCommand;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public UsuariosDataTable() {
@@ -1332,6 +1349,14 @@ namespace DataGridViewExample {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn RestartCommandColumn {
+                get {
+                    return this.columnRestartCommand;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -1367,7 +1392,7 @@ namespace DataGridViewExample {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public UsuariosRow AddUsuariosRow(string Usuario, bool Ativo, int UsuInc, int UsuAlt, System.DateTime DatInc, System.DateTime DatAlt, string DeletCommand) {
+            public UsuariosRow AddUsuariosRow(string Usuario, bool Ativo, int UsuInc, int UsuAlt, System.DateTime DatInc, System.DateTime DatAlt, string DeletCommand, string RestartCommand) {
                 UsuariosRow rowUsuariosRow = ((UsuariosRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -1377,7 +1402,8 @@ namespace DataGridViewExample {
                         UsuAlt,
                         DatInc,
                         DatAlt,
-                        DeletCommand};
+                        DeletCommand,
+                        RestartCommand};
                 rowUsuariosRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowUsuariosRow);
                 return rowUsuariosRow;
@@ -1415,6 +1441,7 @@ namespace DataGridViewExample {
                 this.columnDatInc = base.Columns["DatInc"];
                 this.columnDatAlt = base.Columns["DatAlt"];
                 this.columnDeletCommand = base.Columns["DeletCommand"];
+                this.columnRestartCommand = base.Columns["RestartCommand"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1436,6 +1463,8 @@ namespace DataGridViewExample {
                 base.Columns.Add(this.columnDatAlt);
                 this.columnDeletCommand = new global::System.Data.DataColumn("DeletCommand", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnDeletCommand);
+                this.columnRestartCommand = new global::System.Data.DataColumn("RestartCommand", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnRestartCommand);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnId}, true));
                 this.columnId.AutoIncrement = true;
@@ -1452,6 +1481,7 @@ namespace DataGridViewExample {
                 this.columnDatInc.AllowDBNull = false;
                 this.columnDatAlt.AllowDBNull = false;
                 this.columnDeletCommand.DefaultValue = ((string)("Deletar"));
+                this.columnRestartCommand.DefaultValue = ((string)("Restaurar"));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1605,6 +1635,8 @@ namespace DataGridViewExample {
             
             private global::System.Data.DataColumn columnDeletCommand;
             
+            private global::System.Data.DataColumn columnRestartCommand;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public VendasDataTable() {
@@ -1720,6 +1752,14 @@ namespace DataGridViewExample {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn RestartCommandColumn {
+                get {
+                    return this.columnRestartCommand;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -1755,7 +1795,7 @@ namespace DataGridViewExample {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public VendasRow AddVendasRow(CarrosRow parentCarrosRowByFK_Vendas_Carros, int Quantidade, decimal Valor, bool Ativo, int UsuInc, int UsuAlt, System.DateTime DatInc, System.DateTime DatAlt, string DeletCommand) {
+            public VendasRow AddVendasRow(CarrosRow parentCarrosRowByFK_Vendas_Carros, int Quantidade, decimal Valor, bool Ativo, int UsuInc, int UsuAlt, System.DateTime DatInc, System.DateTime DatAlt, string DeletCommand, string RestartCommand) {
                 VendasRow rowVendasRow = ((VendasRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -1767,7 +1807,8 @@ namespace DataGridViewExample {
                         UsuAlt,
                         DatInc,
                         DatAlt,
-                        DeletCommand};
+                        DeletCommand,
+                        RestartCommand};
                 if ((parentCarrosRowByFK_Vendas_Carros != null)) {
                     columnValuesArray[1] = parentCarrosRowByFK_Vendas_Carros[0];
                 }
@@ -1810,6 +1851,7 @@ namespace DataGridViewExample {
                 this.columnDatInc = base.Columns["DatInc"];
                 this.columnDatAlt = base.Columns["DatAlt"];
                 this.columnDeletCommand = base.Columns["DeletCommand"];
+                this.columnRestartCommand = base.Columns["RestartCommand"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1835,6 +1877,8 @@ namespace DataGridViewExample {
                 base.Columns.Add(this.columnDatAlt);
                 this.columnDeletCommand = new global::System.Data.DataColumn("DeletCommand", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnDeletCommand);
+                this.columnRestartCommand = new global::System.Data.DataColumn("RestartCommand", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnRestartCommand);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnId}, true));
                 this.columnId.AutoIncrement = true;
@@ -1852,6 +1896,7 @@ namespace DataGridViewExample {
                 this.columnDatInc.AllowDBNull = false;
                 this.columnDatAlt.AllowDBNull = false;
                 this.columnDeletCommand.DefaultValue = ((string)("Deletar"));
+                this.columnRestartCommand.DefaultValue = ((string)("Restaurar"));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2558,6 +2603,22 @@ namespace DataGridViewExample {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string RestartCommand {
+                get {
+                    try {
+                        return ((string)(this[this.tableMarcas.RestartCommandColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'RestartCommand\' in table \'Marcas\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableMarcas.RestartCommandColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsDeletCommandNull() {
                 return this.IsNull(this.tableMarcas.DeletCommandColumn);
             }
@@ -2566,6 +2627,18 @@ namespace DataGridViewExample {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetDeletCommandNull() {
                 this[this.tableMarcas.DeletCommandColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsRestartCommandNull() {
+                return this.IsNull(this.tableMarcas.RestartCommandColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetRestartCommandNull() {
+                this[this.tableMarcas.RestartCommandColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2689,6 +2762,22 @@ namespace DataGridViewExample {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string RestartCommand {
+                get {
+                    try {
+                        return ((string)(this[this.tableUsuarios.RestartCommandColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'RestartCommand\' in table \'Usuarios\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableUsuarios.RestartCommandColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsDeletCommandNull() {
                 return this.IsNull(this.tableUsuarios.DeletCommandColumn);
             }
@@ -2697,6 +2786,18 @@ namespace DataGridViewExample {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetDeletCommandNull() {
                 this[this.tableUsuarios.DeletCommandColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsRestartCommandNull() {
+                return this.IsNull(this.tableUsuarios.RestartCommandColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetRestartCommandNull() {
+                this[this.tableUsuarios.RestartCommandColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -2831,6 +2932,22 @@ namespace DataGridViewExample {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string RestartCommand {
+                get {
+                    try {
+                        return ((string)(this[this.tableVendas.RestartCommandColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'RestartCommand\' in table \'Vendas\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableVendas.RestartCommandColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public CarrosRow CarrosRow {
                 get {
                     return ((CarrosRow)(this.GetParentRow(this.Table.ParentRelations["FK_Vendas_Carros"])));
@@ -2850,6 +2967,18 @@ namespace DataGridViewExample {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetDeletCommandNull() {
                 this[this.tableVendas.DeletCommandColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsRestartCommandNull() {
+                return this.IsNull(this.tableVendas.RestartCommandColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetRestartCommandNull() {
+                this[this.tableVendas.RestartCommandColumn] = global::System.Convert.DBNull;
             }
         }
         

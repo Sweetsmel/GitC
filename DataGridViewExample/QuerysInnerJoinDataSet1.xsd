@@ -598,6 +598,7 @@ WHERE  (Ativo = 0)) TEMP</CommandText>
               <xs:element name="DatInc" msprop:Generator_ColumnVarNameInTable="columnDatInc" msprop:Generator_ColumnPropNameInRow="DatInc" msprop:Generator_ColumnPropNameInTable="DatIncColumn" msprop:Generator_UserColumnName="DatInc" type="xs:dateTime" />
               <xs:element name="DatAlt" msprop:Generator_ColumnVarNameInTable="columnDatAlt" msprop:Generator_ColumnPropNameInRow="DatAlt" msprop:Generator_ColumnPropNameInTable="DatAltColumn" msprop:Generator_UserColumnName="DatAlt" type="xs:dateTime" />
               <xs:element name="DeletCommand" msprop:Generator_ColumnVarNameInTable="columnDeletCommand" msprop:Generator_ColumnPropNameInRow="DeletCommand" msprop:Generator_ColumnPropNameInTable="DeletCommandColumn" msprop:Generator_UserColumnName="DeletCommand" type="xs:string" default="Deletar" minOccurs="0" />
+              <xs:element name="RestartCommand" msprop:Generator_ColumnVarNameInTable="columnRestartCommand" msprop:Generator_ColumnPropNameInRow="RestartCommand" msprop:Generator_ColumnPropNameInTable="RestartCommandColumn" msprop:Generator_UserColumnName="RestartCommand" type="xs:string" default="Restaurar" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
@@ -614,6 +615,7 @@ WHERE  (Ativo = 0)) TEMP</CommandText>
               <xs:element name="DatInc" msprop:Generator_ColumnVarNameInTable="columnDatInc" msprop:Generator_ColumnPropNameInRow="DatInc" msprop:Generator_ColumnPropNameInTable="DatIncColumn" msprop:Generator_UserColumnName="DatInc" type="xs:dateTime" />
               <xs:element name="DatAlt" msprop:Generator_ColumnVarNameInTable="columnDatAlt" msprop:Generator_ColumnPropNameInRow="DatAlt" msprop:Generator_ColumnPropNameInTable="DatAltColumn" msprop:Generator_UserColumnName="DatAlt" type="xs:dateTime" />
               <xs:element name="DeletCommand" msprop:Generator_ColumnVarNameInTable="columnDeletCommand" msprop:Generator_ColumnPropNameInRow="DeletCommand" msprop:Generator_ColumnPropNameInTable="DeletCommandColumn" msprop:Generator_UserColumnName="DeletCommand" type="xs:string" default="Deletar" minOccurs="0" />
+              <xs:element name="RestartCommand" msprop:Generator_ColumnVarNameInTable="columnRestartCommand" msprop:Generator_ColumnPropNameInRow="RestartCommand" msprop:Generator_ColumnPropNameInTable="RestartCommandColumn" msprop:Generator_UserColumnName="RestartCommand" type="xs:string" default="Restaurar" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
@@ -634,6 +636,7 @@ WHERE  (Ativo = 0)) TEMP</CommandText>
               <xs:element name="DatInc" msprop:Generator_ColumnVarNameInTable="columnDatInc" msprop:Generator_ColumnPropNameInRow="DatInc" msprop:Generator_ColumnPropNameInTable="DatIncColumn" msprop:Generator_UserColumnName="DatInc" type="xs:dateTime" />
               <xs:element name="DatAlt" msprop:Generator_ColumnVarNameInTable="columnDatAlt" msprop:Generator_ColumnPropNameInRow="DatAlt" msprop:Generator_ColumnPropNameInTable="DatAltColumn" msprop:Generator_UserColumnName="DatAlt" type="xs:dateTime" />
               <xs:element name="DeletCommand" msprop:Generator_ColumnVarNameInTable="columnDeletCommand" msprop:Generator_ColumnPropNameInRow="DeletCommand" msprop:Generator_ColumnPropNameInTable="DeletCommandColumn" msprop:Generator_UserColumnName="DeletCommand" type="xs:string" default="Deletar" minOccurs="0" />
+              <xs:element name="RestartCommand" msprop:Generator_ColumnVarNameInTable="columnRestartCommand" msprop:Generator_ColumnPropNameInRow="RestartCommand" msprop:Generator_ColumnPropNameInTable="RestartCommandColumn" msprop:Generator_UserColumnName="RestartCommand" type="xs:string" default="Restaurar" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>

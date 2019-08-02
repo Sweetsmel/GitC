@@ -1,4 +1,5 @@
-﻿using DataGridViewExample.Edicao;
+﻿using DataGridViewExample.Adicionar;
+using DataGridViewExample.Edicao;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -20,9 +21,7 @@ namespace DataGridViewExample
 
         private void Form3_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'querysInnerJoinDataSet1.Usuarios' table. You can move, or remove it, as needed.
             this.usuariosTableAdapter.CustomQuery(this.querysInnerJoinDataSet1.Usuarios);
-
         }
 
         private void DataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -55,7 +54,20 @@ namespace DataGridViewExample
         }
         private void Button1_Click(object sender, EventArgs e)
         {
+            frmAdicionarUsuarios formAdd = new frmAdicionarUsuarios();
+            formAdd.ShowDialog();
 
+            if (!string.IsNullOrEmpty(formAdd.usuariosRow?.Usuario))
+
+                this.usuariosTableAdapter.Insert(
+                                        formAdd.usuariosRow.Usuario,
+                                        true,
+                                        1,
+                                        1,
+                                        DateTime.Now,
+                                        DateTime.Now
+            );
+            this.usuariosTableAdapter.Fill(this.querysInnerJoinDataSet1.Usuarios);
         }
     }
 }

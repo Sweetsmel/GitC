@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DataGridViewExample.Model
 {
-    class Marcas
+    public class Marcas
     {
         public string Nome { get; set; }
         public bool Ativo { get; set; } = true;

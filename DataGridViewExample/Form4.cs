@@ -1,4 +1,5 @@
-﻿using DataGridViewExample.Edicao;
+﻿using DataGridViewExample.Adicionar;
+using DataGridViewExample.Edicao;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -20,7 +21,25 @@ namespace DataGridViewExample
 
         private void Button1_Click(object sender, EventArgs e)
         {
+            frmAdicionarVendas frmAddVendas = new frmAdicionarVendas();
+            frmAddVendas.ShowDialog();
 
+            if (frmAddVendas.vendasRow?.Carro > 0 && frmAddVendas.vendasRow?.Valor > 0)       //carro e valor
+
+            //if (!string.IsNullOrEmpty(formAdd.vendasRow?.Carro))
+
+
+                    this.vendasTableAdapter.Insert(
+                                        frmAddVendas.vendasRow.Carro,
+                                        frmAddVendas.vendasRow.Quantidade,
+                                        frmAddVendas.vendasRow.Valor,
+                                        true,
+                                        1,
+                                        1,
+                                        DateTime.Now,
+                                        DateTime.Now
+            );
+            this.vendasTableAdapter.Fill(this.querysInnerJoinDataSet1.Vendas);
         }
 
         private void Form4_Load(object sender, EventArgs e)

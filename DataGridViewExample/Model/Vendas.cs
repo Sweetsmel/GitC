@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace DataGridViewExample.Model
 {
-    class Vendas
+    public class Vendas
     {
-        public string Carro { get; set; }
-        public int Quantidade { get; set; }
-        public double Valor { get; set; }
+        public int Carro { get; set; } = 0; //assinado se ngm informar vai receber 0
+        public int Quantidade { get; set; } = 0;
+        public decimal Valor { get; set; } = 0;
         public bool Ativo { get; set; } = true;
         public int UsuInc { get; set; }
         public int UsuAlt { get; set; }

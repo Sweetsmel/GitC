@@ -32,9 +32,14 @@ namespace DataGridViewExample.Edicao
         {
             VendasRow.Carro = (int)comboBox1.SelectedValue;
             VendasRow.Quantidade = (int)numericUpDown1.Value;
-            VendasRow.Valor = decimal.Parse(comboBox1.Text);
+            VendasRow.Valor = decimal.Parse(textBox2.Text);
 
             this.Close();
+        }
+
+        private void TextBox2_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
