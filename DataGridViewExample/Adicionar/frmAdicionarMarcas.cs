@@ -35,5 +35,10 @@ namespace DataGridViewExample.Adicionar
         {
             //this.marcasTableAdapter.Fill(this.querysInnerJoinDataSet1.Marcas);
         }
+
+        private void TbxNameAdd_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

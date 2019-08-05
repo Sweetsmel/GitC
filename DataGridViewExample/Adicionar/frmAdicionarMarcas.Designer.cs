@@ -64,6 +64,7 @@
             this.tbxNameAdd.Name = "tbxNameAdd";
             this.tbxNameAdd.Size = new System.Drawing.Size(204, 22);
             this.tbxNameAdd.TabIndex = 2;
+            this.tbxNameAdd.TextChanged += new System.EventHandler(this.TbxNameAdd_TextChanged);
             // 
             // frmAdicionarMarcas
             // 

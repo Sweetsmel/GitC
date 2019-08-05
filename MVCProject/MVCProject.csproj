@@ -46,11 +46,89 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Adicionar\addAutor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Adicionar\addAutor.Designer.cs">
+      <DependentUpon>addAutor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Adicionar\addEditora.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Adicionar\addEditora.Designer.cs">
+      <DependentUpon>addEditora.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Adicionar\addGenero.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Adicionar\addGenero.Designer.cs">
+      <DependentUpon>addGenero.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Adicionar\addLivro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Adicionar\addLivro.Designer.cs">
+      <DependentUpon>addLivro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Adicionar\addLocacao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Adicionar\addLocacao.Designer.cs">
+      <DependentUpon>addLocacao.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Adicionar\addUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Adicionar\addUsuario.Designer.cs">
+      <DependentUpon>addUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Editar\editAutor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Editar\editAutor.Designer.cs">
+      <DependentUpon>editAutor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Editar\editLocacao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Editar\editLocacao.Designer.cs">
+      <DependentUpon>editLocacao.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Editar\editEditora.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Editar\editEditora.Designer.cs">
+      <DependentUpon>editEditora.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Editar\editGenero.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Editar\editGenero.Designer.cs">
+      <DependentUpon>editGenero.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Editar\editLivro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Editar\editLivro.Designer.cs">
+      <DependentUpon>editLivro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Editar\editUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Editar\editUsuario.Designer.cs">
+      <DependentUpon>editUsuario.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form2Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form2Login.Designer.cs">
+      <DependentUpon>Form2Login.cs</DependentUpon>
     </Compile>
     <Compile Include="Model\Autor.cs" />
     <Compile Include="Model\Editora.cs" />
@@ -59,6 +137,7 @@
     <Compile Include="Model\Livro.cs" />
     <Compile Include="Model\LivroAutor.cs" />
     <Compile Include="Model\Locacao.cs" />
+    <Compile Include="Model\Session.cs" />
     <Compile Include="Model\Usuario.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -115,8 +194,47 @@
     <Compile Include="View\frmLivros.Designer.cs">
       <DependentUpon>frmLivros.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Adicionar\addAutor.resx">
+      <DependentUpon>addAutor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Adicionar\addEditora.resx">
+      <DependentUpon>addEditora.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Adicionar\addGenero.resx">
+      <DependentUpon>addGenero.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Adicionar\addLivro.resx">
+      <DependentUpon>addLivro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Adicionar\addLocacao.resx">
+      <DependentUpon>addLocacao.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Adicionar\addUsuario.resx">
+      <DependentUpon>addUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Editar\editAutor.resx">
+      <DependentUpon>editAutor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Editar\editLocacao.resx">
+      <DependentUpon>editLocacao.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Editar\editEditora.resx">
+      <DependentUpon>editEditora.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Editar\editGenero.resx">
+      <DependentUpon>editGenero.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Editar\editLivro.resx">
+      <DependentUpon>editLivro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Editar\editUsuario.resx">
+      <DependentUpon>editUsuario.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form2Login.resx">
+      <DependentUpon>Form2Login.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
