@@ -23,9 +23,9 @@ namespace DataGridViewExample.Edicao
         {
             this.marcasTableAdapter.FillBy(this.querysInnerJoinDataSet1.Marcas);
 
-            textBox1.Text           = CarrosRow.Modelo;   //consigo passar modelo
-            dateTimePicker1.Value   = CarrosRow.Ano;      //agora consigo passar o ano
-            comboBox1.SelectedValue = CarrosRow.Marca;    //agora trago a marca
+            textBox1.Text           = CarrosRow.Modelo;                         //consigo passar modelo
+            dateTimePicker1.Value   = CarrosRow.Ano;                            //agora consigo passar o ano
+            comboBox1.SelectedValue = CarrosRow.Marca;                          //agora trago a marca
 
             /*TRANSPARENCIA
             this.BackColor = Color.LimeGreen;

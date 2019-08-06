@@ -28,17 +28,7 @@ namespace MVCProject.View
 
         private void Button1_Click(object sender, EventArgs e)
         {
-            addGenero generoAdd = new addGenero();
-            generoAdd.ShowDialog();
 
-            if (!string.IsNullOrEmpty(generoAdd.generoRow?.Tipo))
-
-                this.generosTableAdapter.Insert(
-                                        generoAdd.generoRow.Tipo,
-                                        generoAdd.generoRow.Descricao
-
-            );
-            this.generosTableAdapter.Fill(this.sistemaBibliotecaDBDataSet.Generos);
         }
 
         private void DataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -68,6 +58,21 @@ namespace MVCProject.View
             }
 
             this.generosTableAdapter.CustomQuery(sistemaBibliotecaDBDataSet.Generos);
+        }
+
+        private void PictureBox2_Click(object sender, EventArgs e)
+        {
+            addGenero generoAdd = new addGenero();
+            generoAdd.ShowDialog();
+
+            if (!string.IsNullOrEmpty(generoAdd.generoRow?.Tipo))
+
+                this.generosTableAdapter.Insert(
+                                        generoAdd.generoRow.Tipo,
+                                        generoAdd.generoRow.Descricao
+
+            );
+            this.generosTableAdapter.Fill(this.sistemaBibliotecaDBDataSet.Generos);
         }
     }
 }

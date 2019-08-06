@@ -74,5 +74,28 @@ namespace MVCProject.View
 
             this.locacaoTableAdapter.CustomQuery(sistemaBibliotecaDBDataSet.Locacao);
         }
+
+        private void PictureBox2_Click(object sender, EventArgs e)
+        {
+            addLocacao locacaoAdd = new addLocacao();
+            locacaoAdd.ShowDialog();
+
+            //if (!string.IsNullOrEmpty(locacaoAdd.locacaoRow?.Livro))
+            if (locacaoAdd.locacaoRow?.Livro > 0)
+
+                this.locacaoTableAdapter.Insert(
+                            locacaoAdd.locacaoRow.Livro,
+                            locacaoAdd.locacaoRow.Usuario,
+                            locacaoAdd.locacaoRow.Tipo,
+                            locacaoAdd.locacaoRow.Devolucao,
+                            locacaoAdd.locacaoRow.DiasAloc,
+                            true,
+                            1,
+                            1,
+                            DateTime.Now,
+                            DateTime.Now
+);
+            this.locacaoTableAdapter.Fill(this.sistemaBibliotecaDBDataSet.Locacao);
+        }
     }
 }

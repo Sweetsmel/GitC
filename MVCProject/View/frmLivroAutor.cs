@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MVCProject.Model;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -17,20 +18,27 @@ namespace MVCProject.View
             InitializeComponent();
         }
 
+        public MVCProject.SistemaBibliotecaDBDataSet.LivrosRow livrosRow;
+
         private void FrmLivroAutor_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'sistemaBibliotecaDBDataSet.LivroAutor' table. You can move, or remove it, as needed.
-            this.livroAutorTableAdapter.Fill(this.sistemaBibliotecaDBDataSet.LivroAutor);
-            // TODO: This line of code loads data into the 'sistemaBibliotecaDBDataSet.Autores' table. You can move, or remove it, as needed.
             this.autoresTableAdapter.Fill(this.sistemaBibliotecaDBDataSet.Autores);
-            // TODO: This line of code loads data into the 'sistemaBibliotecaDBDataSet.LivroAutor' table. You can move, or remove it, as needed.
             this.livroAutorTableAdapter.Fill(this.sistemaBibliotecaDBDataSet.LivroAutor);
 
+            label2.Text = livrosRow.Titulo;
         }
 
         private void DataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void Button1_Click(object sender, EventArgs e)
+        {
+            this.livroAutorTableAdapter.Insert(livrosRow.Id,
+              (int)comboBox1.SelectedValue);
+
+            this.livroAutorTableAdapter.FillBy(this.sistemaBibliotecaDBDataSet.LivroAutor, livrosRow.Id.ToString());
         }
     }
 }

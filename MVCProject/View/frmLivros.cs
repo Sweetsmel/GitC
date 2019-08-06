@@ -1,5 +1,6 @@
 ﻿using MVCProject.Adicionar;
 using MVCProject.Editar;
+using MVCProject.Model;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -22,9 +23,54 @@ namespace MVCProject.View
         private void FrmLivros_Load(object sender, EventArgs e)
         {
             this.livrosTableAdapter.Fill(this.sistemaBibliotecaDBDataSet.Livros);
+            this.livrosTableAdapter.Fill(this.sistemaBibliotecaDBDataSet.Livros);
+
+            this.BackColor = Color.LimeGreen;
+            this.TransparencyKey = Color.LimeGreen;
         }
 
         private void Button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void DataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            var livroSelect = ((System.Data.DataRowView)
+                this.dataGridView1.Rows[e.RowIndex].DataBoundItem).Row
+            as MVCProject.SistemaBibliotecaDBDataSet.LivrosRow;
+
+            switch (e.ColumnIndex)
+            {
+                case 0:                             //Coluna deletar
+                    {
+                        this.livrosTableAdapter.DeleteQuery(livroSelect.Id);
+                    }
+                    break;
+                case 1:             //editar
+                    {
+                        editLivro livroEdit = new editLivro();
+                        livroEdit.livrosRow = livroSelect;
+                        livroEdit.ShowDialog();
+                
+
+                        this.livrosTableAdapter.Update(livroEdit.livrosRow);
+                    }
+                    break;
+                case 2:             // Livro AUTOR
+                    {                        
+                        frmLivroAutor frm = new frmLivroAutor();
+                        frm.livrosRow = livroSelect;
+                        frm.ShowDialog();
+                    }
+                    break;
+            }
+
+            this.livrosTableAdapter.Fill(this.sistemaBibliotecaDBDataSet.Livros);
+            this.livrosTableAdapter.CustomQuery(sistemaBibliotecaDBDataSet.Livros);
+        }
+
+        private void PictureBox2_Click(object sender, EventArgs e)
         {
             addLivro livroAdd = new addLivro();
             livroAdd.ShowDialog();
@@ -50,33 +96,9 @@ namespace MVCProject.View
             this.livrosTableAdapter.Fill(this.sistemaBibliotecaDBDataSet.Livros);
         }
 
-        private void DataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void Panel1_Paint(object sender, PaintEventArgs e)
         {
-            var livroSelect = ((System.Data.DataRowView)
-                this.dataGridView1.Rows[e.RowIndex].DataBoundItem).Row
-            as MVCProject.SistemaBibliotecaDBDataSet.LivrosRow;
 
-            switch (e.ColumnIndex)
-            {
-                case 0:                             //Coluna deletar
-                    {
-                        this.livrosTableAdapter.DeleteQuery(livroSelect.Id);
-                    }
-                    break;
-                case 1:
-                    {
-                        editLivro livroEdit = new editLivro();
-                        livroEdit.livrosRow = livroSelect;
-                        //autorEdit.autoresRow = autorSelect;
-                        livroEdit.ShowDialog();
-                
-
-                        this.livrosTableAdapter.Update(livroEdit.livrosRow);
-                    }
-                    break;
-            }           
-
-            this.livrosTableAdapter.CustomQuery(sistemaBibliotecaDBDataSet.Livros);
         }
     }
 }

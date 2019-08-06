@@ -118,12 +118,6 @@
     <Compile Include="Editar\editUsuario.Designer.cs">
       <DependentUpon>editUsuario.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </Compile>
     <Compile Include="Form2Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -229,9 +223,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Editar\editUsuario.resx">
       <DependentUpon>editUsuario.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form2Login.resx">
       <DependentUpon>Form2Login.cs</DependentUpon>
