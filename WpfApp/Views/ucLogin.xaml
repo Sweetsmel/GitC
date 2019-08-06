@@ -6,7 +6,7 @@
              xmlns:local="clr-namespace:WpfApp.Views"
              mc:Ignorable="d" 
              d:DesignHeight="200" d:DesignWidth="750">
-    <Grid Margin="0,0,0.4,-268" Height="468" VerticalAlignment="Top" RenderTransformOrigin="0.502,0.463">
+    <Grid Margin="0,0,0.4,-268" RenderTransformOrigin="0.502,0.463" Height="468" VerticalAlignment="Top">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="113*"/>
             <ColumnDefinition Width="511*"/>

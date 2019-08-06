@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace WpfApp
+namespace WpfCalculadora
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
@@ -23,12 +23,6 @@ namespace WpfApp
         public MainWindow()
         {
             InitializeComponent();
-        }
-
-        private void UcLoginForm_loginCorrect_1(object sender, EventArgs e)
-        {
-            ucTaskForm.Visibility = Visibility.Visible;
-            MessageBox.Show("Que show cara!");
         }
     }
 }

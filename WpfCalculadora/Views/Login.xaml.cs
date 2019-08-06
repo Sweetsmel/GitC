@@ -13,31 +13,33 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace WpfApp.Views
+namespace WpfCalculadora.Views
 {
     /// <summary>
-    /// Interaction logic for ucLogin.xaml
+    /// Interaction logic for Login.xaml
     /// </summary>
-    public partial class ucLogin : UserControl
+    public partial class Login : UserControl
     {
-        public ucLogin()
+        public Login()
         {
             InitializeComponent();
         }
 
-        public event EventHandler loginCorrect;     //informando ser um evento com Event
+        public event EventHandler loginCorrect;
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             Teste(tbxLogin.Text, tbxSenha.Text);
         }
+
         public void Teste(string login, string senha)
         {
             if (login == "admin" && senha == "admin")
             {
                 this.Visibility = Visibility.Hidden;
                 loginCorrect(null, new EventArgs());
-            }else
+            }
+            else
                 MessageBox.Show("Login inválido!");
         }
     }

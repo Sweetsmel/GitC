@@ -13,22 +13,21 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace WpfApp
+namespace WpfCalculadora.Views
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for Calculadora.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class Calculadora : UserControl
     {
-        public MainWindow()
+        public Calculadora()
         {
             InitializeComponent();
         }
 
-        private void UcLoginForm_loginCorrect_1(object sender, EventArgs e)
+        private void Button_Click(object sender, RoutedEventArgs e)
         {
-            ucTaskForm.Visibility = Visibility.Visible;
-            MessageBox.Show("Que show cara!");
+
         }
     }
 }
