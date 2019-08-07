@@ -24,5 +24,19 @@ namespace WpfCalculadora
         {
             InitializeComponent();
         }
+
+        private void LoginForm_Loaded(object sender, RoutedEventArgs e)
+        {
+            //MessageBox.Show(sender.ToString());
+            //LoginForm.Visibility = Visibility.Hidden;
+            //CalculadoraForm.Visibility = Visibility.Visible;
+
+        }
+
+        private void LoginForm_loginCorrect(object sender, EventArgs e)     //chama a calculadora após o login
+        {
+            CalculadoraForm.Visibility = Visibility.Visible;
+            //MessageBox.Show(sender.ToString());     //recebo a informação
+        }
     }
 }

@@ -29,7 +29,7 @@ namespace WpfCalculadora.Views
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            Teste(tbxLogin.Text, tbxSenha.Text);
+            Teste(tbxLogin.Text, passSenha.Password);
         }
 
         public void Teste(string login, string senha)
@@ -41,6 +41,21 @@ namespace WpfCalculadora.Views
             }
             else
                 MessageBox.Show("Login inválido!");
+        }
+
+        private void TbxLogin_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        private void PassSenha_PasswordChanged(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void BotaoEntrar_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

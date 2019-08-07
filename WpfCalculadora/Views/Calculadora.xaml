@@ -4,110 +4,144 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:WpfCalculadora.Views"
-             mc:Ignorable="d" 
-             d:DesignHeight="405.213" Width="341.469">
-    <Grid>
-        <Button Content="4" HorizontalAlignment="Left" Margin="11,229,0,0" VerticalAlignment="Top" Width="75" Height="51" FontWeight="ExtraBlack" FontSize="20" FontFamily="Tahoma" Background="#FF91D6A3" TextOptions.TextFormattingMode="Display" Cursor="Hand">
+             mc:Ignorable="d" Width="559.069" Height="479.613"
+             xmlns:gif="http://wpfanimatedgif.codeplex.com">
+    <Grid Margin="0,0,-0.4,0.6">
+        <Grid.Background>
+            <ImageBrush ImageSource="/WpfCalculadora;component/Imagens/adventureTime.png" Stretch="Fill" TileMode="None"/>
+        </Grid.Background>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="107*"/>
+            <RowDefinition Height="53*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="279*"/>
+            <ColumnDefinition Width="281*"/>
+        </Grid.ColumnDefinitions>
+        <Button Name="Quatro" Content="4" HorizontalAlignment="Left" Margin="93,294,0,0" VerticalAlignment="Top" Width="75" Height="51" FontWeight="ExtraBlack" FontSize="20" FontFamily="Tahoma" Background="#FF91D6A3" TextOptions.TextFormattingMode="Display" Cursor="Hand" Click="Quatro_Click" Grid.RowSpan="2">
             <Button.Effect>
                 <DropShadowEffect Color="#FF7EA287"/>
             </Button.Effect>
         </Button>
-        <Button Content="5" HorizontalAlignment="Left" Margin="91,229,0,0" VerticalAlignment="Top" Width="75" Height="51" FontWeight="ExtraBlack" FontSize="20" FontFamily="Tahoma" Background="#FF91D6A3" TextOptions.TextFormattingMode="Display" Cursor="Hand">
+        <Button Name="Cinco" Content="5" HorizontalAlignment="Left" Margin="173,294,0,0" VerticalAlignment="Top" Width="75" Height="51" FontWeight="ExtraBlack" FontSize="20" FontFamily="Tahoma" Background="#FF91D6A3" TextOptions.TextFormattingMode="Display" Cursor="Hand" Click="Cinco_Click" Grid.RowSpan="2">
             <Button.Effect>
                 <DropShadowEffect Color="#FF7EA287"/>
             </Button.Effect>
         </Button>
-        <Button Content="6" HorizontalAlignment="Left" Margin="171,229,0,0" VerticalAlignment="Top" Width="75" Height="51" FontWeight="ExtraBlack" FontSize="20" FontFamily="Tahoma" Background="#FF91D6A3" TextOptions.TextFormattingMode="Display" Cursor="Hand">
+        <Button Name="Seis" Content="6" HorizontalAlignment="Left" Margin="253,294,0,0" VerticalAlignment="Top" Width="75" Height="51" FontWeight="ExtraBlack" FontSize="20" FontFamily="Tahoma" Background="#FF91D6A3" TextOptions.TextFormattingMode="Display" Cursor="Hand" Click="Seis_Click" Grid.ColumnSpan="2" Grid.RowSpan="2">
             <Button.Effect>
                 <DropShadowEffect Color="#FF7EA287"/>
             </Button.Effect>
         </Button>
-        <Button Content="1" HorizontalAlignment="Left" Margin="11,285,0,0" VerticalAlignment="Top" Width="75" Height="51" FontWeight="ExtraBlack" FontSize="20" FontFamily="Tahoma" Background="#FF91D6A3" TextOptions.TextFormattingMode="Display" Cursor="Hand">
+        <Button Name="Um" Content="1" HorizontalAlignment="Left" Margin="93,29.467,0,0" VerticalAlignment="Top" Width="75" Height="51" FontWeight="ExtraBlack" FontSize="20" FontFamily="Tahoma" Background="#FF91D6A3" TextOptions.TextFormattingMode="Display" Cursor="Hand" Click="Um_Click" Grid.Row="1">
             <Button.Effect>
                 <DropShadowEffect Color="#FF7EA287"/>
             </Button.Effect>
         </Button>
-        <Button Content="2" HorizontalAlignment="Left" Margin="91,285,0,0" VerticalAlignment="Top" Width="75" Height="51" FontWeight="ExtraBlack" FontSize="20" FontFamily="Tahoma" Background="#FF91D6A3" TextOptions.TextFormattingMode="Display" Cursor="Hand">
+        <Button Name="Dois" Content="2" HorizontalAlignment="Left" Margin="173,29.467,0,0" VerticalAlignment="Top" Width="75" Height="51" FontWeight="ExtraBlack" FontSize="20" FontFamily="Tahoma" Background="#FF91D6A3" TextOptions.TextFormattingMode="Display" Cursor="Hand" Click="Dois_Click" Grid.Row="1">
             <Button.Effect>
                 <DropShadowEffect Color="#FF7EA287"/>
             </Button.Effect>
         </Button>
-        <Button Content="3" HorizontalAlignment="Left" Margin="171,285,0,0" VerticalAlignment="Top" Width="75" Height="51" FontWeight="ExtraBlack" FontSize="20" FontFamily="Tahoma" Background="#FF91D6A3" TextOptions.TextFormattingMode="Display" Cursor="Hand">
+        <Button Name="Tres" Content="3" HorizontalAlignment="Left" Margin="253,29.467,0,0" VerticalAlignment="Top" Width="75" Height="51" FontWeight="ExtraBlack" FontSize="20" FontFamily="Tahoma" Background="#FF91D6A3" TextOptions.TextFormattingMode="Display" Cursor="Hand" Click="Tres_Click" Grid.ColumnSpan="2" Grid.Row="1">
             <Button.Effect>
                 <DropShadowEffect Color="#FF7EA287"/>
             </Button.Effect>
         </Button>
-        <Button Content="+/-" HorizontalAlignment="Left" Margin="11,341,0,0" VerticalAlignment="Top" Width="75" Height="51" FontSize="20" FontFamily="Tahoma" Background="#FF80BAB3" TextOptions.TextHintingMode="Animated" TextOptions.TextFormattingMode="Display" Cursor="Hand">
+        <Button Name="MaisMenos" Content="+/-" HorizontalAlignment="Left" Margin="93,84.467,0,0" VerticalAlignment="Top" Width="75" Height="52" FontSize="20" FontFamily="Tahoma" Background="#FF80BAB3" TextOptions.TextHintingMode="Animated" TextOptions.TextFormattingMode="Display" Cursor="Hand" Click="MaisMenos_Click" Grid.Row="1">
             <Button.Effect>
                 <DropShadowEffect Color="#FF62918B"/>
             </Button.Effect>
         </Button>
-        <Button Content="0" HorizontalAlignment="Left" Margin="91,341,0,0" VerticalAlignment="Top" Width="75" Height="51" FontSize="20" FontWeight="ExtraBlack" FontFamily="Tahoma" Background="#FF91D6A3" TextOptions.TextFormattingMode="Display" Cursor="Hand">
+        <Button Name="Zero" Content="0" HorizontalAlignment="Left" Margin="173,84.467,0,0" VerticalAlignment="Top" Width="75" Height="52" FontSize="20" FontWeight="ExtraBlack" FontFamily="Tahoma" Background="#FF91D6A3" TextOptions.TextFormattingMode="Display" Cursor="Hand" Click="Zero_Click" ClickMode="Press" Grid.Row="1">
             <Button.Effect>
                 <DropShadowEffect Color="#FF7EA287"/>
             </Button.Effect>
         </Button>
-        <Button Content="," HorizontalAlignment="Left" Margin="171,341,0,0" VerticalAlignment="Top" Width="75" Height="51" FontSize="20" FontFamily="Tahoma" Background="#FF80BAB3" TextOptions.TextHintingMode="Animated" TextOptions.TextFormattingMode="Display" Cursor="Hand">
+        <Button Name="Virgula" Content="," HorizontalAlignment="Left" Margin="253,84.467,0,0" VerticalAlignment="Top" Width="75" Height="52" FontSize="20" FontFamily="Tahoma" Background="#FF80BAB3" TextOptions.TextHintingMode="Animated" TextOptions.TextFormattingMode="Display" Cursor="Hand" Click="Virgula_Click" Grid.ColumnSpan="2" Grid.Row="1">
             <Button.Effect>
                 <DropShadowEffect Color="#FF62918B"/>
             </Button.Effect>
         </Button>
-        <Button Content="7" HorizontalAlignment="Left" Margin="11,173,0,0" VerticalAlignment="Top" Width="75" Height="51" FontWeight="ExtraBlack" FontSize="20" FontFamily="Tahoma" Background="#FF91D6A3" TextOptions.TextFormattingMode="Display" Cursor="Hand">
+        <Button Name="Sete" Content="7" HorizontalAlignment="Left" Margin="93,238,0,0" VerticalAlignment="Top" Width="75" Height="51" FontWeight="ExtraBlack" FontSize="20" FontFamily="Tahoma" Background="#FF91D6A3" TextOptions.TextFormattingMode="Display" Cursor="Hand" Click="Sete_Click">
             <Button.Effect>
                 <DropShadowEffect Color="#FF7EA287"/>
             </Button.Effect>
         </Button>
-        <Button Content="8" HorizontalAlignment="Left" Margin="91,173,0,0" VerticalAlignment="Top" Width="75" Height="51" Click="Button_Click" FontWeight="ExtraBlack" FontSize="20" FontFamily="Tahoma" Background="#FF91D6A3" TextOptions.TextFormattingMode="Display" Cursor="Hand">
+        <Button Name="Oito"  Content="8" HorizontalAlignment="Left" Margin="173,238,0,0" VerticalAlignment="Top" Width="75" Height="51" Click="Oito_Click_1" FontWeight="ExtraBlack" FontSize="20" FontFamily="Tahoma" Background="#FF91D6A3" TextOptions.TextFormattingMode="Display" Cursor="Hand">
             <Button.Effect>
                 <DropShadowEffect Color="#FF7EA287"/>
             </Button.Effect>
         </Button>
-        <Button Content="9" HorizontalAlignment="Left" Margin="171,173,0,0" VerticalAlignment="Top" Width="75" Height="51" FontWeight="ExtraBlack" FontSize="20" FontFamily="Tahoma" Background="#FF91D6A3" TextOptions.TextFormattingMode="Display" Cursor="Hand">
+        <Button Name="Nove" Content="9" HorizontalAlignment="Left" Margin="253,238,0,0" VerticalAlignment="Top" Width="75" Height="51" FontWeight="ExtraBlack" FontSize="20" FontFamily="Tahoma" Background="#FF91D6A3" TextOptions.TextFormattingMode="Display" Cursor="Hand" Click="Nove_Click" Grid.ColumnSpan="2">
             <Button.Effect>
                 <DropShadowEffect Color="#FF7EA287"/>
             </Button.Effect>
         </Button>
-        <Button Content="-" HorizontalAlignment="Left" Margin="251,229,0,0" VerticalAlignment="Top" Width="75" Height="51" FontSize="20" FontFamily="Tahoma" Background="#FF80BAB3" TextOptions.TextHintingMode="Animated" TextOptions.TextFormattingMode="Display" Cursor="Hand">
+        <Button Name="Subtracao" Content="-" HorizontalAlignment="Left" Margin="53.8,294,0,0" VerticalAlignment="Top" Width="75" Height="51" FontSize="20" FontFamily="Tahoma" Background="#FF80BAB3" TextOptions.TextHintingMode="Animated" TextOptions.TextFormattingMode="Display" Cursor="Hand" Click="Subtracao_Click" Grid.Column="1" Grid.RowSpan="2">
             <Button.Effect>
                 <DropShadowEffect Color="#FF62918B"/>
             </Button.Effect>
         </Button>
-        <Button Content="+" HorizontalAlignment="Left" Margin="251,285,0,0" VerticalAlignment="Top" Width="75" Height="51" FontSize="20" FontFamily="Tahoma" Background="#FF80BAB3" TextOptions.TextHintingMode="Animated" TextOptions.TextFormattingMode="Display" Cursor="Hand">
+        <Button Name="Soma" Content="+" HorizontalAlignment="Left" Margin="53.8,29.467,0,0" VerticalAlignment="Top" Width="75" Height="51" FontSize="20" FontFamily="Tahoma" Background="#FF80BAB3" TextOptions.TextHintingMode="Animated" TextOptions.TextFormattingMode="Display" Cursor="Hand" Click="Mais_Click" Grid.Column="1" Grid.Row="1">
             <Button.Effect>
                 <DropShadowEffect Color="#FF62918B"/>
             </Button.Effect>
         </Button>
-        <Button Content="=" HorizontalAlignment="Left" Margin="251,341,0,0" VerticalAlignment="Top" Width="75" Height="51" FontSize="20" FontFamily="Tahoma" Background="#FF80BAB3" TextOptions.TextHintingMode="Animated" TextOptions.TextFormattingMode="Display" Cursor="Hand">
+        <Button Name="Igual" Content="=" HorizontalAlignment="Left" Margin="53.8,84.467,0,0" VerticalAlignment="Top" Width="75" Height="52" FontSize="20" FontFamily="Tahoma" Background="#FF80BAB3" TextOptions.TextHintingMode="Animated" TextOptions.TextFormattingMode="Display" Cursor="Hand" Click="Igual_Click" Grid.Column="1" Grid.Row="1">
             <Button.Effect>
                 <DropShadowEffect Color="#FF62918B"/>
             </Button.Effect>
         </Button>
-        <Button Content="x" HorizontalAlignment="Left" Margin="251,173,0,0" VerticalAlignment="Top" Width="75" Height="51" FontSize="20" FontFamily="Tahoma" Background="#FF80BAB3" TextOptions.TextHintingMode="Animated" TextOptions.TextFormattingMode="Display" Cursor="Hand">
+        <Button Name="Vezes" Content="x" HorizontalAlignment="Left" Margin="53.8,238,0,0" VerticalAlignment="Top" Width="75" Height="51" FontSize="20" FontFamily="Tahoma" Background="#FF80BAB3" TextOptions.TextHintingMode="Animated" TextOptions.TextFormattingMode="Display" Cursor="Hand" Click="Vezes_Click" Grid.Column="1">
             <Button.Effect>
                 <DropShadowEffect Color="#FF62918B"/>
             </Button.Effect>
         </Button>
-        <Button Content="CE" HorizontalAlignment="Left" Margin="11,117,0,0" VerticalAlignment="Top" Width="75" Height="51" FontFamily="Tahoma" FontSize="20" Background="#FF80BAB3" TextOptions.TextHintingMode="Animated" TextOptions.TextFormattingMode="Display" Cursor="Hand">
+        <Button Name="ApagaMetade" Content="CE" HorizontalAlignment="Left" Margin="93,182,0,0" VerticalAlignment="Top" Width="75" Height="51" FontFamily="Tahoma" FontSize="20" Background="#FF80BAB3" TextOptions.TextHintingMode="Animated" TextOptions.TextFormattingMode="Display" Cursor="Hand" Click="ApagaMetade_Click">
             <Button.Effect>
                 <DropShadowEffect Color="#FF62918B"/>
             </Button.Effect>
         </Button>
-        <Button Content="C" HorizontalAlignment="Left" Margin="91,117,0,0" VerticalAlignment="Top" Width="75" Height="51" FontFamily="Tahoma" FontSize="20" Background="#FF80BAB3" TextOptions.TextHintingMode="Animated" TextOptions.TextFormattingMode="Display" Cursor="Hand">
+        <Button Name="Reinicia" Content="C" HorizontalAlignment="Left" Margin="173,182,0,0" VerticalAlignment="Top" Width="75" Height="51" FontFamily="Tahoma" FontSize="20" Background="#FF80BAB3" TextOptions.TextHintingMode="Animated" TextOptions.TextFormattingMode="Display" Cursor="Hand" Click="Reinicia_Click">
             <Button.Effect>
                 <DropShadowEffect Color="#FF62918B"/>
             </Button.Effect>
         </Button>
-        <Button Content="Apagar" HorizontalAlignment="Left" Margin="171,117,0,0" VerticalAlignment="Top" Width="75" Height="51" FontFamily="Tahoma" FontSize="20" Background="#FF80BAB3" TextOptions.TextHintingMode="Animated" TextOptions.TextFormattingMode="Display" Cursor="Hand">
+        <Button Name="Apaga" Content="Apagar" HorizontalAlignment="Left" Margin="253,182,0,0" VerticalAlignment="Top" Width="75" Height="51" FontFamily="Tahoma" FontSize="20" Background="#FF80BAB3" TextOptions.TextHintingMode="Animated" TextOptions.TextFormattingMode="Display" Cursor="Hand" Click="Apaga_Click" Grid.ColumnSpan="2">
             <Button.Effect>
                 <DropShadowEffect Color="#FF62918B"/>
             </Button.Effect>
         </Button>
-        <Button Content="/" HorizontalAlignment="Left" Margin="251,117,0,0" VerticalAlignment="Top" Width="75" Height="51" FontSize="20" FontFamily="Tahoma" Background="#FF80BAB3" TextOptions.TextHintingMode="Animated" TextOptions.TextFormattingMode="Display" Cursor="Hand">
+        <Button Name="Divisao" Content="/" HorizontalAlignment="Left" Margin="53.8,182,0,0" VerticalAlignment="Top" Width="75" Height="51" FontSize="20" FontFamily="Tahoma" Background="#FF80BAB3" TextOptions.TextHintingMode="Animated" TextOptions.TextFormattingMode="Display" Cursor="Hand" Click="Divisao_Click" Grid.Column="1">
             <Button.Effect>
                 <DropShadowEffect Color="#FF62918B"/>
             </Button.Effect>
         </Button>
-        <TextBox HorizontalAlignment="Left" Height="102" Margin="10,10,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="315"/>
+        <TextBox Name="display" HorizontalAlignment="Left" Height="111" Margin="93,66,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="315" FontFamily="Tahoma" FontSize="48" TextChanged="Display_TextChanged" Background="{x:Null}" Grid.ColumnSpan="2">
+            <TextBox.Effect>
+                <DropShadowEffect Color="#FFCAC7C7"/>
+            </TextBox.Effect>
+        </TextBox>
+        <Image HorizontalAlignment="Left" Height="246" Margin="105.8,233,0,0" VerticalAlignment="Top" Width="175" Source="/WpfCalculadora;component/Imagens/grupohoradaAventura.png" Grid.Column="1" Grid.RowSpan="2"/>
+        <Image x:Name="Finn"
+               gif:ImageBehavior.RepeatBehavior="Forever"
+               gif:ImageBehavior.AnimatedSource="C:\Git\GitC\WpfCalculadora\Imagens\FIN.gif"             
+               HorizontalAlignment="Left" 
+               Height="100" 
+               Margin="10,77,0,0" 
+               VerticalAlignment="Top" 
+               Width="100" 
+               Source="/WpfCalculadora;component/Imagens/FIN.gif"/>
+        <Image x:Name="Jacke"
+               gif:ImageBehavior.RepeatBehavior="Forever"
+               gif:ImageBehavior.AnimatedSource="C:\Git\GitC\WpfCalculadora\Imagens\JACKE.gif"
+               HorizontalAlignment="Left" 
+               Height="100" 
+               Margin="105.8,93,0,0" 
+               VerticalAlignment="Top" 
+               Width="100" 
+               Source="/WpfCalculadora;component/Imagens/JACKE.gif" Grid.Column="1"/>
 
     </Grid>
 </UserControl>

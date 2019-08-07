@@ -5,23 +5,60 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:WpfCalculadora.Views"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
-    <Grid>
+             xmlns:gif="http://wpfanimatedgif.codeplex.com"
+             d:DesignHeight="450" Width="639.467">
+    <Grid x:Name="___No_Name_" Margin="0,0,0.2,-0.4" Height="450" VerticalAlignment="Top">
+        <Grid.Background>
+            <ImageBrush ImageSource="/WpfCalculadora;component/Imagens/adventureTime.png" Stretch="Uniform"/>
+        </Grid.Background>
         <Grid.RowDefinitions>
-            <RowDefinition Height="106*"/>
-            <RowDefinition Height="202*"/>
-            <RowDefinition Height="141*"/>
+            <RowDefinition Height="241*"/>
+            <RowDefinition Height="209*"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="238*"/>
-            <ColumnDefinition Width="327*"/>
-            <ColumnDefinition Width="235*"/>
+            <ColumnDefinition Width="320*"/>
+            <ColumnDefinition Width="319*"/>
         </Grid.ColumnDefinitions>
-        <Button Content="Entrar" Margin="0.6,4.2,234,75.6" FontWeight="Bold" FontFamily="Microsoft Sans Serif" FontSize="36" TextOptions.TextHintingMode="Animated" Background="#FF93C89D" Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="2" Click="Button_Click"/>
-        <Label Content="Login:" Margin="237,17.647,266.6,149.8" FontWeight="Bold" FontSize="18" Grid.ColumnSpan="2" Grid.Row="1"/>
-        <Label Content="Senha:" Margin="237,95.647,261.6,72.8" FontSize="18" FontWeight="Bold" Grid.ColumnSpan="2" Grid.Row="1"/>
-        <TextBox Name="tbxLogin" Margin="99.6,13.647,232,142.8" TextWrapping="Wrap" Text="" Grid.ColumnSpan="2" Grid.Column="1" Grid.Row="1"/>
-        <TextBox Name="tbxSenha" Margin="99.6,95.647,232,60.8" TextWrapping="Wrap" Text="" Grid.ColumnSpan="2" Grid.Column="1" Grid.Row="1"/>
+        <Button Content="" 
+                Margin="81,54.2,0,0" 
+                FontWeight="Bold" 
+                FontFamily="Microsoft Sans Serif" 
+                FontSize="20" 
+                TextOptions.TextHintingMode="Animated" 
+                Click="Button_Click" 
+                Height="79" 
+                VerticalAlignment="Top" Cursor="Hand" IsDefault="True" ClickMode="Press" BorderBrush="{x:Null}" Foreground="{x:Null}" Grid.Column="1" Grid.Row="1" HorizontalAlignment="Left" Width="79">
+            <Button.ContextMenu>
+                <ContextMenu Cursor="Hand"/>
+            </Button.ContextMenu>
+            <Button.CacheMode>
+                <BitmapCache/>
+            </Button.CacheMode>
+            <Button.BindingGroup>
+                <BindingGroup/>
+            </Button.BindingGroup>
+            <Button.Background>
+                <ImageBrush ImageSource="/WpfCalculadora;component/Imagens/loginCurto.png"/>
+            </Button.Background>
+        </Button>
+        <Label Content="Login:" 
+               Margin="161,212,0,0" 
+               FontSize="18" Height="36" VerticalAlignment="Top" FontFamily="Tahoma" FontWeight="SemiBold" Grid.RowSpan="2" HorizontalAlignment="Left" Width="76"/>
+        <Label Content="Senha:" 
+               Margin="161,19.2,0,0" 
+               FontSize="18" Height="36" VerticalAlignment="Top" FontFamily="Tahoma" FontWeight="SemiBold" Grid.Row="1" HorizontalAlignment="Left" Width="76"/>
+        <TextBox Name="tbxLogin" 
+                 Margin="242,212,0,0" 
+                 TextWrapping="Wrap" 
+                 Text=""
+                 TextChanged="TbxLogin_TextChanged" Height="30" VerticalAlignment="Top" Background="White" FontFamily="Tahoma" FontSize="18" FontWeight="SemiBold" Grid.ColumnSpan="2" Grid.RowSpan="2" HorizontalAlignment="Left" Width="238"/>
+        <PasswordBox Name="passSenha" 
+                     Margin="242,19.2,0,0"
+                     PasswordChanged="PassSenha_PasswordChanged" Height="30" VerticalAlignment="Top" Background="White" Grid.ColumnSpan="2" Grid.Row="1" HorizontalAlignment="Left" Width="238"/>
+        <Label Content="Entrar" 
+               Margin="104,96.2,0,0" 
+               VerticalAlignment="Top" FontSize="10" FontFamily="Tahoma" Grid.Column="1" Grid.Row="1" HorizontalAlignment="Left" Width="56"/>
+        <Image x:Name="BMO" gif:ImageBehavior.RepeatBehavior="Forever" gif:ImageBehavior.AnimatedSource="C:\Git\GitC\WpfCalculadora\Imagens\e593ab0589d5f1b389e4dfbcce2bce20.gif" HorizontalAlignment="Left" Height="100" Margin="270,73,0,0" VerticalAlignment="Top" Width="100" Source="/WpfCalculadora;component/Imagens/e593ab0589d5f1b389e4dfbcce2bce20.gif" Grid.ColumnSpan="2"/>
 
     </Grid>
 </UserControl>

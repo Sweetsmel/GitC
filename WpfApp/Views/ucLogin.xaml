@@ -33,7 +33,8 @@
                  Margin="42.2,102,44,9.2"                
                  TextWrapping="Wrap" 
                  Text="" 
-                 Grid.Column="1"/>
+                 Grid.Column="1" 
+                 TextChanged="TbxSenha_TextChanged"/>
 
     </Grid>
 </UserControl>

@@ -7,7 +7,9 @@
         xmlns:y="clr-namespace:WpfCalculadora.Views"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
+    
     <Grid>
-        <y:Login x:Name="LoginForm"></y:Login>
+        <y:Login x:Name="LoginForm" Loaded="LoginForm_Loaded" loginCorrect="LoginForm_loginCorrect"></y:Login>
+        <y:Calculadora x:Name="CalculadoraForm" Visibility="Hidden"/>
     </Grid>
 </Window>
