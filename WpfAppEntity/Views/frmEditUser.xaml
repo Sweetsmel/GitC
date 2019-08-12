@@ -1,0 +1,20 @@
+﻿<Window x:Class="WpfAppEntity.Views.frmEditUser"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfAppEntity.Views"
+        mc:Ignorable="d"
+        Title="frmEditUser" Height="450" Width="642.551" Loaded="Window_Loaded">
+    <Grid>
+        <Button Name="btnSalvar" Content="Confirmar" HorizontalAlignment="Left" Margin="366,343,0,0" VerticalAlignment="Top" Width="150" Height="38" Click="BtnSalvar_Click" FontFamily="Comic Sans MS" FontSize="18"/>
+        <TextBox Name="tbxUsuario" HorizontalAlignment="Left" Height="39" Margin="213,162,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="303" FontFamily="Comic Sans MS" FontSize="18"/>
+        <TextBox Name="tbxLogin" HorizontalAlignment="Left" Height="40" Margin="213,221,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="303" FontFamily="Comic Sans MS" FontSize="18"/>
+        <TextBox Name="tbxSenha" HorizontalAlignment="Left" Height="41" Margin="213,281,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="303" FontFamily="Comic Sans MS" FontSize="18"/>
+        <Label Content="Usuário:" HorizontalAlignment="Left" Margin="121,162,0,0" VerticalAlignment="Top" Height="39" Width="88" FontFamily="Comic Sans MS" FontSize="18"/>
+        <Label Content="Login" HorizontalAlignment="Left" Margin="121,221,0,0" VerticalAlignment="Top" Height="40" Width="88" FontFamily="Comic Sans MS" FontSize="18"/>
+        <Label Content="Senha" HorizontalAlignment="Left" Margin="121,281,0,0" VerticalAlignment="Top" Height="41" Width="88" FontFamily="Comic Sans MS" FontSize="18"/>
+        <Label Content="Edição de Usuário" HorizontalAlignment="Left" Margin="211,60,0,0" VerticalAlignment="Top" Background="{x:Null}" FontWeight="Bold" FontFamily="Comic Sans MS" FontSize="24"/>
+
+    </Grid>
+</Window>
