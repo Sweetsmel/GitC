@@ -1,0 +1,138 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>Teste</title>
+        <link href="Content/bootstrap-grid.css" rel="stylesheet" />
+        <link href="Content/bootstrap.css" rel="stylesheet" />
+        
+        <style> /*COR e LOCAL*/
+            .field-custom{
+                background-color:#76dc83;
+                text-align:center;
+                padding:5px
+            }
+            .right{
+                text-align: right;
+            }
+            .left{
+                text-align:left;
+            }
+            input{
+                height: calc(2.25rem + 2px);
+                padding: .375rem .75rem;
+                font-size: 1rem;
+                line-height: 1.5;
+                color: #495057;
+                background-color: #fff;
+                background-clip: padding-box;
+                border: 1px solid #ced4da;
+                border-radius: .25rem;
+                transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+                height: calc(2.25rem + 2px);
+                padding: .375rem .75rem;
+                font-size: 1rem;
+                line-height: 1.5;
+                color: #495057;
+                background-color: #fff;
+                background-clip: padding-box;
+                border: 1px solid #ced4da;
+                border-radius: .25rem;
+                transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+            }
+            html{
+                background-color:#76dc83 !important;
+            }
+        </style>
+    </head>    
+    <body>
+        <!-- https://httpbin.org/get -->
+        <div class="container-fluid">                                                                       <!--class definem o tipo de conteudo, trabalha com linhas-->
+            <!--BOTÕES-->
+            <div class="row">
+                <div class="col-md-12 field-custom">                                                        <!--md (medio): monitores médios / sm (small): monitores menores-->
+                    <input id="Button1" class="col-md-3 btn btn-dark" type="button" value="Pesquisar" />
+                </div>
+                <div class="col-md-12 field-custom">
+                    <input id="Button2" class="col-md-3 btn btn-dark" type="button" value="Apagar" />
+                </div>
+            </div>
+    
+            <div class="row">  
+                
+                <div class="col-md-12 field-custom">
+
+                    <div>
+                        <label for="Accept" class="col-2">Accept:</label>                                   <!--o for serve para quando clicar na label(texto), já se direcionar para o texto-->
+                        <input type="text" class="col-4" id="Accept" placeholder="Text content" />
+                    </div>
+                    <div>
+                        <label for="AcceptEncoding" class="col-2">Accept-Encoding:</label>
+                        <input type="text" class="col-4" id="AcceptEncoding" placeholder="Text content" />
+                    </div>
+                    <div>
+                        <label for="AcceptLanguage" class="col-2">Accept-Language:</label>
+                        <input type="text" class="col-4" id="AcceptLanguage" placeholder="Text content" />
+                    </div>
+                    <div>
+                        <label for="Host" class="col-2">Host:</label>
+                        <input type="text" class="col-4" id="Host" placeholder="Text content" />
+                    </div>
+
+                    <div>
+                        <label for="SecFetchMode" class="col-2">Sec-Fetch-Mode:</label>
+                        <input type="text" class="col-4" id="SecFetchMode" placeholder="Text content" />
+                    </div>
+                    <div>
+                        <label for="SecFetchSite" class="col-2">Sec-Fetch-Site:</label>
+                        <input type="text" class="col-4" id="SecFetchSite" placeholder="Text content" />
+                    </div>
+                    <div>
+                        <label for="UpgradeInsecureRequests" class="col-2">Upgrade-Insecure-Requests:</label>
+                        <input type="text" class="col-4" id="UpgradeInsecureRequests" placeholder="Text content" />
+                    </div>
+                    <div>
+                        <label for="UserAgent" class="col-2">User-Agent:</label>
+                        <input type="text" class="col-4" id="UserAgent" placeholder="Text content" />
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    
+        <!--<div id="blockbackgroud" style="background-color:rgba(0,0,0,0.80); position:absolute; width:100%; height:100%; top:0; left:0;"></div>-->
+    
+        <script src="Scripts/bootstrap.bundle.js"></script>
+        <script src="Scripts/bootstrap.js"></script>
+        <script src="Scripts/jquery-3.4.1.js"></script>
+        
+        <script>                                                                                //aJax. Pegou uma biblioteca externa
+            $('#blockbackgroud').hide();
+            $(function ()                                                                       //JQuery: $
+            {                                                                   
+                $('#Button1').click(function ()
+                {
+                    $('#blockbackgroud').show(500);                                             //500 segundos da animação tela preta
+                    $.get('https://httpbin.org/get', function (data, textStatus, jqXHR)
+                    {                                                                           //passou a função, 1 em caso de sucesso
+                        $('#blockbackgroud').hide();
+    
+                        $('#Accept').val(data.headers.Accept);
+                        $('#AcceptEncoding').val(data.headers['Accept-Encoding']);
+                        $('#AcceptLanguage').val(data.headers['Accept-Language']);
+                        $('#Host').val(data.headers['Host']);
+                        $('#SecFetchMode').val(data.headers['Sec-Fetch-Mode']);
+                        $('#SecFetchSite').val(data.headers['Sec-Fetch-Site']);
+                        $('#UpgradeInsecureRequests').val(data.headers['Upgrade-Insecure-Requests']);
+                        $('#UserAgent').val(data.headers['User-Agent']);
+    
+                    });
+                });
+            });
+    
+        </script>
+
+    </body>
+</html>

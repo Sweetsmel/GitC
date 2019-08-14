@@ -1,0 +1,152 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <link href="Content/bootstrap-grid.css" rel="stylesheet" />
+    <link href="Content/bootstrap.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+   
+    <style type="text/css">
+
+        input[type='text']{
+            color:red;
+        }
+        #mensagem{
+            color:red;
+        }
+
+        .field-custom {
+            background-color: #76dc83;
+            text-align: center;
+            padding: 5px
+        }
+
+        .right {
+            text-align: right;
+        }
+
+        .left {
+            text-align: left;
+        }
+
+        input {
+            height: calc(2.25rem + 2px);
+            padding: .375rem .75rem;
+            font-size: 1rem;
+            line-height: 1.5;
+            color: #495057;
+            background-color: #fff;
+            background-clip: padding-box;
+            border: 1px solid #ced4da;
+            border-radius: .25rem;
+            transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+            height: calc(2.25rem + 2px);
+            padding: .375rem .75rem;
+            font-size: 1rem;
+            line-height: 1.5;
+            color: #495057;
+            background-color: #fff;
+            background-clip: padding-box;
+            border: 1px solid #ced4da;
+            border-radius: .25rem;
+            transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+        }
+
+        html {
+            background-color: #76dc83 !important;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!--<br />-->
+        <fieldset>
+            <legend><h1>Formulário - Consulta de CEP</h1></legend>
+
+            <form action="action_cliente.php" method="post" id='form-contato' enctype='multipart/form-data'>
+
+                <!--BOTÕES-->
+                <!--<div class="row">
+                    <div class="col-md-12 field-custom">
+                        <input id="Button1" class="col-md-3 btn btn-dark" type="button" value="Pesquisar" />
+                    </div>
+                </div>-->
+
+                <div class="row">
+
+                    <div class="col-md-2 field-custom">
+
+                        <div class="form-group">
+                            <label>CEP:</label>
+                            <input type="text" class="form-control pula" id="cep" maxlength="12" name="cep" placeholder="Informe o CEP" />
+                        </div>
+                        <div class="form-group">
+                            <label>Rua, Logradouro: <span>*</span> <span id="mensagem"></span></label>
+                            <input type="text" class="form-control pula" id="logradouro" placeholder="Text content" />
+                        </div>
+                        <div class="form-group">
+                            <label>Complemento:</label>
+                            <input type="text" class="form-control pula" id="complemento" placeholder="Text content" />
+                        </div>
+                        <div class="form-group">
+                            <label>Bairro:</label>
+                            <input type="text" class="form-control pula" id="bairro" placeholder="Text content" />
+                        </div>
+                        <div class="form-group">
+                            <label>Localidade:</label>
+                            <input type="text" class="form-control pula" id="localidade" placeholder="Text content" />
+                        </div>
+                        <div class="form-group">
+                            <label>UF:</label>
+                            <input type="text" class="form-control pula" id="uf" placeholder="Text content" />
+                        </div>
+                        <div class="form-group">
+                            <label>Unidade:</label>
+                            <input type="text" class="form-control pula" id="unidade" placeholder="Text content" />
+                        </div>
+                        <div class="form-group">
+                            <label>IBGE:</label>
+                            <input type="text" class="form-control pula" id="ibge" placeholder="Text content" />
+                        </div>
+                        <div class="form-group">
+                            <label>Gia:</label>
+                            <input type="text" class="form-control pula" id="gia" placeholder="Text content" />
+                        </div>
+
+                    </div>
+
+                </div>
+            </form>
+        </fieldset>
+    </div>
+
+    <script src="Scripts/bootstrap.bundle.js"></script>
+    <script src="Scripts/bootstrap.js"></script>
+    <script src="Scripts/jquery-3.4.1.js"></script>
+
+    <script>
+
+        $(document).ready(function()
+        {
+            $("button").click(function()
+            {
+                //$('#blockbackgroud').show(500);
+                $.get("https://viacep.com.br/ws/38402100/json/", function(data, status)
+                {
+                    alert("Data:" + data + "\nStatus:" + status);
+                    //$('#blockbackgroud').hide();
+
+                    alert("cep" + Cep + "\nStatus:" + status);
+
+                    $('#cep').val(data.CEP);
+                    $('#logradouro').val(data['Logradouro']);
+
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>
