@@ -6,14 +6,15 @@
     <link href="Content/bootstrap-grid.css" rel="stylesheet" />
     <link href="Content/bootstrap.css" rel="stylesheet" />
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
-   
+
     <style type="text/css">
 
-        input[type='text']{
-            color:red;
+        input[type='text'] {
+            color: red;
         }
-        #mensagem{
-            color:red;
+
+        #mensagem {
+            color: red;
         }
 
         .field-custom {
@@ -63,20 +64,23 @@
     <div class="container">
         <!--<br />-->
         <fieldset>
-            <legend><h1>Formulário - Consulta de CEP</h1></legend>
+            <legend>Formulário - Consulta de CEP</legend>
 
             <form action="action_cliente.php" method="post" id='form-contato' enctype='multipart/form-data'>
 
                 <!--BOTÕES-->
-                <!--<div class="row">
+                <div class="row">
+                    <div>
+                        <input type="text" placeholder ="cep" id="textCep"/>
+                    </div>
                     <div class="col-md-12 field-custom">
                         <input id="Button1" class="col-md-3 btn btn-dark" type="button" value="Pesquisar" />
                     </div>
-                </div>-->
+                </div>
 
                 <div class="row">
 
-                    <div class="col-md-2 field-custom">
+                    <div class="col-md-12 field-custom">
 
                         <div class="form-group">
                             <label>CEP:</label>
@@ -84,35 +88,35 @@
                         </div>
                         <div class="form-group">
                             <label>Rua, Logradouro: <span>*</span> <span id="mensagem"></span></label>
-                            <input type="text" class="form-control pula" id="logradouro" placeholder="Text content" />
+                            <input type="text" class="form-control pula" id="logradouro" name="logradouro" placeholder="Informe a Rua, Logradouro" />
                         </div>
                         <div class="form-group">
                             <label>Complemento:</label>
-                            <input type="text" class="form-control pula" id="complemento" placeholder="Text content" />
+                            <input type="text" class="form-control pula" id="complemento" name="complemento" placeholder="Informe o Complemento" />
                         </div>
                         <div class="form-group">
                             <label>Bairro:</label>
-                            <input type="text" class="form-control pula" id="bairro" placeholder="Text content" />
+                            <input type="text" class="form-control pula" id="bairro" name="bairro" placeholder="Informe o Bairro" />
                         </div>
                         <div class="form-group">
                             <label>Localidade:</label>
-                            <input type="text" class="form-control pula" id="localidade" placeholder="Text content" />
+                            <input type="text" class="form-control pula" id="localidade" name="localidade" placeholder="Informe a Localidade" />
                         </div>
                         <div class="form-group">
                             <label>UF:</label>
-                            <input type="text" class="form-control pula" id="uf" placeholder="Text content" />
+                            <input type="text" class="form-control pula" id="uf" name="uf" placeholder="Informe UF" />
                         </div>
                         <div class="form-group">
                             <label>Unidade:</label>
-                            <input type="text" class="form-control pula" id="unidade" placeholder="Text content" />
+                            <input type="text" class="form-control pula" id="unidade" name="unidade" placeholder="Informe a Unidade" />
                         </div>
                         <div class="form-group">
                             <label>IBGE:</label>
-                            <input type="text" class="form-control pula" id="ibge" placeholder="Text content" />
+                            <input type="text" class="form-control pula" id="ibge" name="ibge" placeholder="Informe IBGE" />
                         </div>
                         <div class="form-group">
                             <label>Gia:</label>
-                            <input type="text" class="form-control pula" id="gia" placeholder="Text content" />
+                            <input type="text" class="form-control pula" id="gia" name="gia" placeholder="Informe GIA" />
                         </div>
 
                     </div>
@@ -127,26 +131,26 @@
     <script src="Scripts/jquery-3.4.1.js"></script>
 
     <script>
-
-        $(document).ready(function()
-        {
-            $("button").click(function()
-            {
-                //$('#blockbackgroud').show(500);
-                $.get("https://viacep.com.br/ws/38402100/json/", function(data, status)
-                {
-                    alert("Data:" + data + "\nStatus:" + status);
-                    //$('#blockbackgroud').hide();
-
-                    alert("cep" + Cep + "\nStatus:" + status);
-
-                    $('#cep').val(data.CEP);
-                    $('#logradouro').val(data['Logradouro']);
-
+        $(document).ready(function () {
+            $("#Button1").click(function () {
+               var documento = document.getElementById('textCep').value;
+                /*$("#mensagem").html('(Aguarde, consultando CEP ...)');*/
+                $.get('http://viacep.com.br/ws/' + documento + '/json/', function (data) {
+                    $('#cep').val(data['cep']);
+                    $('#logradouro').val(data['logradouro']);
+                    $('#complemento').val(data['complemento']);
+                    $('#bairro').val(data['bairro']);
+                    $('#localidade').val(data['localidade']);
+                    $('#uf').val(data['uf']);
+                    $('#unidade').val(data['unidade']);
+                    $('#ibge').val(data['ibge']);
+                    $('#gia').val(data['gia']);
                 });
             });
         });
+
     </script>
+                                  
 
 </body>
 </html>

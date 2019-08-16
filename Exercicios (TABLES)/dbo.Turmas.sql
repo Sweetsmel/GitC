@@ -1,0 +1,6 @@
+﻿CREATE TABLE [dbo].[Turmas]
+(
+	[Id] INT NOT NULL PRIMARY KEY IDENTITY(1,1), 
+    [Turma] VARCHAR(100) NOT NULL, 
+    [Observacao] VARCHAR(1000) NULL
+)

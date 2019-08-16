@@ -1,0 +1,113 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Projeto web API</title>
+    <link href="css/classic.css" rel="stylesheet">
+    <link href="css/hemisu-light.css" rel="stylesheet">
+    <link href="css/prettify.css" rel="stylesheet">
+    <link href="css/screen.css" rel="stylesheet">
+
+</head>
+<body>
+
+    <form id="SavecontactForm" method="post">
+
+
+        <!--BOTÂO-->
+        <div class="row">
+            <div>
+                <input type="text" placeholder="usuario" id="textUsu" />
+            </div>
+            <div class="col-md-12">
+                <input id="Button1" class="col-md-3 btn btn-dark" type="button" value="Pesquisar" />
+            </div>
+        </div>
+
+        <div class="row">
+
+            <div class="col-md-12 field-custom">
+
+                <div class="form-group">
+                    <label>Usuario:</label>
+                    <input type="text" class="form-control pula" id="Usuario1" maxlength="12" name="Usuario" placeholder="Informe o Usuario" />
+                </div>
+                <!--<div class="form-group">
+                    <label>Ativo:</label>
+                    <input type="text" class="form-control pula" id="Ativo" maxlength="12" name="Ativo" placeholder="Está Ativo?" />
+                </div>-->
+                <!--<div class="form-group">
+                    <label>UsuInc:</label>
+                    <input type="text" class="form-control pula" id="UsuInc" maxlength="12" name="UsuInc" placeholder="Informe o UsuInc" />
+                </div>
+                <div class="form-group">
+                    <label>UsuAlt:</label>
+                    <input type="text" class="form-control pula" id="UsuAlt" maxlength="12" name="UsuAlt" placeholder="Informe o UsuAlt" />
+                </div>-->
+                <!--<div class="form-group">
+                    <label>DatInc:</label>
+                    <input type="text" class="form-control pula" id="DatInc" maxlength="12" name="DatInc" placeholder="Informe a DatInc" />
+                </div>
+                <div class="form-group">
+                    <label>DatAlt:</label>
+                    <input type="text" class="form-control pula" id="DatAlt" maxlength="12" name="DatAlt" placeholder="Informe a DatAlt" />
+                </div>-->
+
+            </div>
+        </div>
+    </form>
+
+
+    <div>
+        <form id="formUsu" method="post">
+            <!--method limpa a caixa de texto e não retorna na url-->
+            <input type="text" name="tbxusuario" placeholder="Informar nome do usuário." />
+            <input type="submit" value="Cadastrar" />
+        </form>
+    </div>
+
+    <div id="exemplo">
+
+    </div>
+
+    <script type="text/javascript"
+            src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <!--jquery.columns.min.js-->
+    <script type="text/javascript"
+            src="jquery.columns.min.js"></script>
+
+    <script>
+        /* JSON.stringify($('#formUsu').serializeArray())   TESTADO NO CONSOLE*/
+
+        /*function CadastraUsuario() {
+            $.ajax({
+                type: 'POST',
+                url: 'http://localhost:52969/Api/Usuarios',
+                data: JSON.stringify($('#formUsu').serializeArray()),
+                contentType: 'application/json; charset=utf-8',
+                dataType: 'json'
+            });
+        }*/
+
+        $('#saveContact').click(function () {
+            $.post("http://localhost:52969/Api/Usuarios",
+                $("#saveContactForm").serialize(),
+                function (value) {
+                    GridRefresh();
+                }, "json");
+        });
+
+        function GridRefresh() {
+            $.get('http://localhost:52969/Api/Usuarios', function (dataApi) {
+                $('#exemplo').columns({ data: dataApi });
+            });
+        }
+
+        $('#buttomPesquisar').click(function () {
+            $.get('http://localhost:52969/Api/Usuarios' + $('#UsuarioPesquisa').val(), function (dataApi) {
+                $('#gridContent').html("<div id=")
+            }
+        })
+    </script>
+</body>
+</html>

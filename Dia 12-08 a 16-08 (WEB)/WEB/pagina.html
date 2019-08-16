@@ -1,0 +1,149 @@
+<html>
+    <head>
+        <style>
+
+            /*Classe específica*/
+            .ButtonClass{
+                width:100px;
+                height:100px;
+            }
+
+            /*O ponto transforma em classe*/
+            .esferasDeGiomar{
+                width:80px;
+                height:80px;
+                /*background-color:#000;*/
+                border:1px solid #808080;
+                border-radius:100%;
+                position:absolute;              /*posição absoluta, livre na tela*/
+                background-size:contain;        /*pega cores aleatorias, com codg la em baixo*/
+                }
+
+            /*Para pegar todas as tags imput*/
+            input{
+                width:500px;
+                height:500px;
+                border-radius:25%;
+            }
+
+            .screen{
+                width:700px;
+                height:700px;
+            }
+
+        </style>
+    </head>
+
+    <body>
+
+        <div     class="screen">
+            <div id="GiomarBalls" 
+                 posleft="10" 
+                 incrementX="true"  
+                 incrementY="true" 
+                 posTop="50"
+                 speedX="1"
+                 speedY="1"                 
+                 class="esferasDeGiomar"></div>
+        </div>
+        
+        <div>
+            <label id="lblGiomarBallsCount">Contador de esferas do giomar:{0}</label>
+        </div>
+        
+        <div>
+            <input id="bntClickMe" 
+                   class="ButtonClass" 
+                   type="button" 
+                   value="Adiciona as esferinhas do Giomar" 
+                   onclick="CriarGiomar()"/>
+        </div>
+        
+        <script>                                                                            //foi criado uma função com variáveis
+    
+            setInterval(Movimento, 10);
+
+            function Movimento()                                                            /*para obter todas as esferas dentro do nosso documento.*/
+            {                                                                               
+                var esferasGiomar = document.getElementsByClassName('esferasDeGiomar');
+    
+                for (var i = 0; i < esferasGiomar.length; i++)                              /*parte q movimenta as esferas*/
+                {                                                                           
+                    MovimentX(esferasGiomar[i])
+                    MovimentY(esferasGiomar[i])
+                }
+            }
+    
+            function MovimentX(object) 
+            {
+                var posLeft    = parseInt(object.getAttribute("posleft"));                             /*Obter o valor do left*/                                           
+                var increment = object.getAttribute("incrementX");                           /*Obter se o mesmo pode incrementar*/
+                var idElement  = object.getAttribute("id");                                  /*Obter o ID do elemento específico*/
+
+                var speedX = parseInt(object.getAttribute("speedX"));
+
+                if (posLeft < 500 && increment === "true")                                  /*=== : comparar tipo e valor*/
+                {                                                                           /*é menor que 500 e pode incrementar?*/
+                    object.style.left = (posLeft = posLeft + speedX).toString() + "px";
+                }
+                else
+                {
+                    object.style.left = (posLeft = posLeft - speedX).toString() + "px";
+                    increment = false;
+                    if (posLeft <= 0)
+                        increment = true;
+                }
+
+                document.getElementById(idElement).setAttribute("incrementX", increment);
+                document.getElementById(idElement).setAttribute("posleft", posLeft);                
+            }
+
+            function MovimentY(object) 
+            {
+                var posTop    = parseInt(object.getAttribute("postop"));                                 
+                var increment = object.getAttribute("incrementY");            
+                var idElement = object.getAttribute("id");           
+
+                var speedY = parseInt(object.getAttribute("speedY"));
+
+    
+                if (posTop < 500 && increment === "true")                    
+                {                                                              
+                    object.style.top = (posTop = posTop + speedY).toString() + "px";
+                }
+                else
+                {
+                    object.style.top = (posTop = posTop - speedY).toString() + "px";
+                    increment = false;
+                    if (posTop <= 0)
+                        increment = true;
+                }
+
+                document.getElementById(idElement).setAttribute("incrementY", increment);
+                document.getElementById(idElement).setAttribute("postop", posTop); 
+            }
+            
+            function CriarGiomar() 
+            {
+                var elementDoc    = document.getElementsByClassName('screen')[0];
+                var elementLbl    = document.getElementById('lblGiomarBallsCount');
+                var esferasGiomar = document.getElementsByClassName('esferasDeGiomar').length;
+
+                var speedx = getRandomIntInclusive(1, 5);
+                var speedy = getRandomIntInclusive(1, 5);
+                var randColor = '#'+Math.floor(Math.random()*16777215).toString(16);
+
+                elementDoc.innerHTML += "<div style=\"background-color:"+randColor+"\" speedX="+speedx+" speedY="+speedy+" id=" + esferasGiomar+" incrementX=\"true\" posleft=\"0\" incrementY=\"true\" postop=\"50\" class=\"esferasDeGiomar\"></div>" //quando da o inner ele insere direto lá
+                elementLbl.innerHTML  = "Contador de esferas do giomar:" + esferasGiomar;
+    }
+
+            function getRandomIntInclusive(min, max)
+            {
+                min = Math.ceil(min);
+                max = Math.floor(max);
+                return Math.floor(Math.random() * (max - min + 1)) + min;
+            }
+
+        </script>
+    </body>
+</html>

@@ -1,0 +1,60 @@
+<!doctype html>                                                                                                             <!--Define o tipo do documento, doc e html devem estar no mesmo. Seprado por elementos-->
+
+<html xmlns="http://www.w3.org/1999/xhtml">                                                                                 <!--Elemento Pai-->
+    <head>                                                                                                                  <!--Elemento Filho-->
+        <title>Projeto web</title>                                                                                          <!--titulo do site, vai aparecer na aba-->
+    </head>
+    <body>                                                                                                                  <!--Elemento Filho-->
+        <div>
+            <label>Pesquisa</label>
+            <label>Nome</label>
+            <input type="text" name="nome" id="nome" placeholder="Informe o nome a ser pesquisado" />
+            <button onclick="Pesquisar()">
+                Pesquisar
+            </button>
+        </div>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" ></script>   <!--importou a biblioteca para dentro do projeto CDNJS-->
+        <script>
+            var foo = { nome: 'Sabrina', sobrenome: 'Fernandes', idade: 24};
+
+            var bar = Object.create(foo);
+
+            bar.temskol = true;
+
+            bar.nome;
+
+            bar.sobrenome;
+
+            bar.idade;
+
+            bar.data = [
+                {
+                    "Id": "1",
+                    "Nome": "Sabrina Lilian Fernandes Correa",
+                    "Idade": "24"
+                },
+                {
+                    "Id": "2",
+                    "Nome": "Giomar Rusbe Junior",
+                    "Idade": "87"
+                }];
+
+            /*$.each(bar.data[0], function (key, value) { alert("key:" + key + "Value:" + value); });*/                         /*o cifrão ($) serve para se tiver o jquery. o $ pega a biblioteca e acrescenta tudo dentro dela.*/
+
+            function Pesquisar() 
+            {
+                $.each(bar.data,
+                    function (index, object)
+                    {
+                        var contentVal = $('#nome').val();
+
+                        if (object.Nome.indexOf(contentVal))        //indexOf: retorna a posição da palavra que está encontrando
+                        {
+                            alert('Encontrado.');
+                        }
+                    });
+            }
+
+        </script>
+    </body>
+</html>
