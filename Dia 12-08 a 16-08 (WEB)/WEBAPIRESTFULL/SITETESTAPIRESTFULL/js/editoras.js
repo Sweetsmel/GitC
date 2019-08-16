@@ -1,6 +1,6 @@
 
     /* Ao carregar o documento o mesmo inicia o conteudo desde script*/
-  	jQuery(document).ready(function(){
+    jQuery(document).ready(function(){
 		/* Indica que o evento submit do form irá realizar esta ação agora*/
 		jQuery('#formusuarios').submit(function(){
 			/* Neste contesto 'this' representa o form deste ID  #myform */                
@@ -8,7 +8,7 @@
 
 			 var settings = {
 			  "crossDomain": true,
-			  "url": "http://localhost:59271/Api/Usuarios",
+			  "url": "http://localhost:59271/Api/Editoras",
 			  "method": "POST",
 			  "headers": {
 				"Content-Type": "application/x-www-form-urlencoded",
@@ -33,9 +33,7 @@
 			
 			$('#Id').val("");
 			$('#Nome').val("");
-			$('#Login').val("");
-			$('#Email').val("");
-			$('#Senha').val("");
+			$('#Descricao').val("");
 			$('#Ativo select').val("true");
 		});
 		
@@ -46,9 +44,7 @@
 			
 			$('#Id').val("");
 			$('#Nome').val("");
-			$('#Login').val("");
-			$('#Email').val("");
-			$('#Senha').val("");
+			$('#Descricao').val("");
 			$('#Ativo select').val("true");
 		});
 		
@@ -63,7 +59,7 @@
         var settings = {
 			"async": true,
 			"crossDomain": true,
-			"url": "http://localhost:59271/Api/Usuarios/"+id,
+			"url": "http://localhost:59271/Api/Editoras/"+id,
 			"method": "GET",
 				"headers": {
 					"Content-Type": "application/json",
@@ -74,10 +70,7 @@
 			$.ajax(settings).done(function (response) {
 				$('#Id').val(response.Id);
 				$('#Nome').val(response.Nome);
-				$('#Login').val(response.Login);
-				$('#Senha').val(response.Senha);
-				$('#Email').val(response.Email);
-				$('#Ativo select').val(response.Ativo);
+				$('#Descricao').val(response.Descricao);
 			});
 		
 	}
@@ -88,7 +81,7 @@
 
 		 var settings = {
 		  "crossDomain": true,
-		  "url": "http://localhost:59271/Api/Usuarios/"+id,
+		  "url": "http://localhost:59271/Api/Editoras/"+id,
 		  "method": "PUT",
 		  "headers": {
 			"Content-Type": "application/x-www-form-urlencoded",
@@ -105,7 +98,7 @@
 	function Deleting(id){
 			 var settings = {
 			  "crossDomain": true,
-			  "url": "http://localhost:59271/Api/Usuarios/"+id,
+			  "url": "http://localhost:59271/Api/Editoras/"+id,
 			  "method": "DELETE",
 			  "headers": {
 				"Content-Type": "application/x-www-form-urlencoded",
@@ -122,7 +115,7 @@
 			var settings = {
 				"async": true,
 				"crossDomain": true,
-				"url": "http://localhost:59271/Api/Usuarios",
+				"url": "http://localhost:59271/Api/Editoras",
 				"method": "GET",
 				"headers": {
 					"Content-Type": "application/json",
@@ -143,8 +136,7 @@
 							+ 	'<tr>'
 							+ 		'<th>ID</th>'
 							+ 		'<th>Nome</th>'
-							+ 		'<th>Login</th>'
-							+ 		'<th>E-mail</th>'
+							+ 		'<th>Descrição</th>'
 							+ 		'<th>Ativo</th>'
 							+ 		'<th>Opções</th>'
 							+ 	'</tr>'
@@ -152,11 +144,10 @@
 
 		$.each(contentValue,function(index,value) {
         var row =     '<tr>'
-						+ '<td>' + value.Id       + '</td>'
-						+ '<td>' + value.Nome    + '</td>'
-						+ '<td>' + value.Login    + '</td>'
-						+ '<td>' + value.Email    + '</td>'
-						+ '<td>' + value.Ativo    + '</td>'
+						+ '<td>' + value.Id        + '</td>'
+						+ '<td>' + value.Nome      + '</td>'
+						+ '<td>' + value.Descricao + '</td>'
+						+ '<td>' + value.Ativo     + '</td>'
 						+ '<td>' 
 						+ 	'<div    class=\'col-md-12\' style=\'float: right;\'>'
 						+ 		'<div    class=\'col-md-6\'>'
