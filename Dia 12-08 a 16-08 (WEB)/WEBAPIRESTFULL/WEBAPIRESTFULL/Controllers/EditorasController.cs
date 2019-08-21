@@ -21,7 +21,7 @@ namespace WEBAPIRESTFULL.Controllers
         // GET: api/Editoras
         public IQueryable<Editoras> GetEditoras()
         {
-            return db.Editoras;
+            return db.Editoras.Where(x => x.Ativo == true);
         }
 
         // GET: api/Editoras/5

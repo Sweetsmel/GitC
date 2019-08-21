@@ -350,44 +350,19 @@
         <!-- sidebar menu: : style can be found in sidebar.less -->
         <ul class="sidebar-menu" data-widget="tree">
           <li class="treeview">
-            <a href="usuarios.html">
-              <i class="fa   fa-cog"></i> <span>Usuários</span>
+            <a>
+              <i class="fa   fa-cog"></i> <span>Administração</span>
             </a>
-          </li>
-          <li class="treeview">
-            <a href="index.html">
-              <i class="fa   fa-cog"></i> <span>ADMINISTRAÇÃO</span>
-            </a>
-          </li>
-          <li class="treeview">
-            <a href="index.html">
-              <i class="fa   fa-cog"></i> <span>ADMINISTRAÇÃO</span>
-            </a>
-          </li>
-          <li class="treeview">
-            <a href="index.html">
-              <i class="fa   fa-cog"></i> <span>ADMINISTRAÇÃO</span>
-            </a>
-          </li>
-          <li class="treeview">
-            <a href="index.html">
-              <i class="fa   fa-cog"></i> <span>ADMINISTRAÇÃO</span>
-            </a>
-          </li>
-          <li class="treeview">
-            <a href="index.html">
-              <i class="fa   fa-cog"></i> <span>ADMINISTRAÇÃO</span>
-            </a>
-          </li>
-          <li class="treeview">
-            <a href="index.html">
-              <i class="fa   fa-cog"></i> <span>ADMINISTRAÇÃO</span>
-            </a>
-          </li>
-          <li class="treeview">
-            <a href="index.html">
-              <i class="fa   fa-cog"></i> <span>ADMINISTRAÇÃO</span>
-            </a>
+          
+            <ul class="treeview-menu">         
+                <li><a href="usuarios.html"><i class="fa  fa-circle-o"></i> Usuários</a></li>
+                <li><a href="autores.html"> <i class="fa  fa-circle-o"></i> Autores</a></li>
+                <li><a href="livros.html">  <i class="fa  fa-circle-o"></i> Livros</a></li>
+                <li><a href="generos.html"> <i class="fa  fa-circle-o"></i> Gêneros</a></li>
+                <li><a href="editoras.html"><i class="fa  fa-circle-o"></i> Editoras</a></li>
+                <li><a href="locacao.html"> <i class="fa  fa-circle-o"></i> Locações</a></li>
+            </ul>
+            
           </li>
         </ul>
       </section>
@@ -408,13 +383,14 @@
       </section>
 	  
       <section class="content" style="margin-bottom:0px;padding-bottom:0px;min-height:0px;">
+        
         <!-- Small boxes (Stat box) -->
-        <form  name="formusuarios" id="formusuarios"  class="box box-primary  collapsed-box" >
+        <form call="GetMethod" send-post="Usuarios" class="box box-primary collapsed-box form-post" >
           <div class="box-header with-border">
             <h3 class="box-title">Usuários</h3>
 			
 			<div class="box-tools pull-right">
-				<button type="button" class="btn btn-block btn-primary" data-widget="collapse"><i class="fa fa-plus"></i></button>
+				<button id="collapse-btn" type="button" class="btn btn-block btn-primary" data-widget="collapse"><i class="fa fa-plus"></i></button>
 			</div>
           </div>
           <!-- hidden field -->
@@ -424,7 +400,7 @@
             <div class="col-md-6">
               <div class="form-group">
                 <label for="Nome">Nome</label>
-                <input type="text" class="form-control" id="Nome" name="Nome" placeholder="Seu nome completo"/>
+                <input type="text" class="form-control" id="Nome" name="Nome" placeholder="Nome completo do Usuário"/>
               </div>
               <div class="form-group">
                 <label>Ativo</label>
@@ -433,11 +409,9 @@
                   <option value="false">Inativo</option>
                 </select>
               </div>
-
-
             </div>
             <div class="col-md-6">
-			  <div class="form-group">
+			        <div class="form-group">
                 <label for="Login">Login</label>
                 <input type="Text" class="form-control" name="Login" id="Login" placeholder="Login"/>
               </div>
@@ -457,18 +431,15 @@
               </div>
             </div>
             <!-- /.box-body -->
-
             <div class="box-footer">
-              <button type="submit" id="bntSubmit" class="btn btn-primary">Finalizar cadastro</button>
-			  <button type="button" id="bntSalvar" class="btn btn-primary" style="display:none;">Salvar cadastro</button>
-			  <button type="button" id="bntCancelar" class="btn btn-primary" style="display:none;">Cancelar cadastro</button>
+              <button type="submit" id="btnSubmit" class="btn btn-primary">Finalizar</button>
+			        <button type="button" class="btn btn-primary btn-cancel-form">Cancelar</button>
             </div>
           </div>
         </form>
 
       </section>
-
-	  
+ 
 	<section class="content">
       <div class="row">
         <div class="col-xs-12">
@@ -491,9 +462,9 @@
                 <tr>
                   <th data-options="field:'Id',width:100">ID</th>
                   <th>Nome</th>
-				  <th>Login</th>
+				          <th>Login</th>
                   <th>E-mail</th>
-				  <th>login</th>
+                  <th>login</th>
                   <th>Opções</th>
                 </tr>
               </table>
@@ -734,9 +705,10 @@
 	  <script src="dist/js/pages/dashboard.js"></script>
 	  <!-- AdminLTE for demo purposes -->
 	  <script src="dist/js/demo.js"></script>
-	  <!-- Custom page script sections -->
-	  <script src="js/usuarios.js"></script>
+    <!-- Custom page script sections -->
+    <script src="js/utils.js"></script>
+    <script src="js/usuarios.js"></script>
+	  
   </scriptsection>
 </body>
-
 </html>

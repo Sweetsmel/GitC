@@ -1,5 +1,6 @@
 namespace WEBAPIRESTFULL.Models
 {
+    using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
@@ -7,7 +8,7 @@ namespace WEBAPIRESTFULL.Models
     using System.Data.Entity.Spatial;
 
     [Table("Locacao")]
-    public partial class Locacao
+    public partial class Locacao : UserControls
     {
         public int Id { get; set; }
 
@@ -19,22 +20,13 @@ namespace WEBAPIRESTFULL.Models
 
         public DateTime Devolucao { get; set; }
 
-        public bool Ativo { get; set; }
-
-        public int UsuInc { get; set; }
-
-        public int UsuAlt { get; set; }
-
-        public DateTime DatInc { get; set; }
-
-        public DateTime DatAlt { get; set; }
-
+        [JsonIgnore]
         public virtual Livros Livros { get; set; }
-
+        [JsonIgnore]
         public virtual Usuarios Usuarios { get; set; }
-
+        [JsonIgnore]
         public virtual Usuarios Usuarios1 { get; set; }
-
+        [JsonIgnore]
         public virtual Usuarios Usuarios2 { get; set; }
     }
 }

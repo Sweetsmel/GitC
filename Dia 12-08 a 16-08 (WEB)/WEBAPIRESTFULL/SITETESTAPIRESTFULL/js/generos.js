@@ -1,15 +1,23 @@
 jQuery(document).ready(function()
-{		
-	GetMethod(null)		//null pq não está usando nada
+{	
+	jQuery('#btnCancelar').click(function()
+	{		
+		$('#Id').val("")
+		$('#Tipo').val("")
+		$('#Descricao').val("")
+		$('#Ativo select').val("true")
+	})
+	
+	GetMethod(null)
 })
 
-function GetMethod(object)		//object pq está chamando um parametro, dai o null nos outros
-{			
+function GetMethod(object)
+{
 	var settings = 
 	{
 		"async": true,
 		"crossDomain": true,
-		"url": "http://localhost:59271/Api/Usuarios",
+		"url": "http://localhost:59271/Api/Generos",
 		"method": "GET",
 		"headers": 
 		{
@@ -17,7 +25,7 @@ function GetMethod(object)		//object pq está chamando um parametro, dai o null 
 			"Accept": "*/*"
 		}
 	}
-	
+
 	$.ajax(settings).done(function (response) 
 	{
 	  RefrestGrid(response)
@@ -30,34 +38,32 @@ function RefrestGrid(contentValue)
 {
    $('#tDataGrid').empty()
    $('#tDataGrid').html
-   (  	'<tbody>'
+   (  '<tbody>'
 		+ 	'<tr>'
 		+ 		'<th>ID</th>'
-		+ 		'<th>Nome</th>'
-		+ 		'<th>Login</th>'
-		+ 		'<th>E-mail</th>'
+		+ 		'<th>Tipo</th>'
+		+ 		'<th>Descrição</th>'
 		+ 		'<th>Ativo</th>'
 		+ 		'<th>Opções</th>'
 		+ 	'</tr>'
 		+ '</tbody>'
 	)
-						
+
 	$.each(contentValue,function(index,value) 
 	{
 		var row = '<tr>'
 		
-			+ '<td>' + value.Id    + '</td>'
-			+ '<td>' + value.Nome  + '</td>'
-			+ '<td>' + value.Login + '</td>'
-			+ '<td>' + value.Email + '</td>'
-			+ '<td>' + value.Ativo + '</td>'
+			+ '<td>' + value.Id        + '</td>'
+			+ '<td>' + value.Tipo      + '</td>'
+			+ '<td>' + value.Descricao + '</td>'
+			+ '<td>' + value.Ativo     + '</td>'
 			+ '<td>' 
 			+ 	'<div    class=\'col-md-12\' style=\'float: right;\'>'
 			+ 		'<div    class=\'col-md-6\'>'
-			+ 			'<button class=\'btn btn-block btn-danger col-md-3 btn-delet-event\' type=\'button\' send-post=\'Usuarios\' value=\''+ value.Id +'\'>Remover</button>'
+			+ 			'<button class=\'btn btn-block btn-danger col-md-3 ajax\' type=\'button\'  onclick=\'Deleting('+ value.Id +')\'>Remover</button>'
 			+ 		'</div>'
 			+ 		'<div     class=\'col-md-6\'>'
-			+ 			'<button  class=\'btn btn-block btn-success col-md-3 btn-editing-event\' send-post=\'Usuarios\' value=\''+ value.Id +'\' type=\'button\'\>Editar</button>'
+			+ 			'<button  class=\'btn btn-block btn-success col-md-3 btn-editing-event\' send-post=\'Generos\' value=\''+ value.Id +'\' type=\'button\'\>Editar</button>'
 			+ 		'</div>'
 			+ 	'</div>'
 			+ '</td>'
@@ -65,7 +71,10 @@ function RefrestGrid(contentValue)
 
     	$('#tDataGrid').append(row)
 	})
-
+	
 	SetGridClickEvents()
 }
 	
+	
+  
+  

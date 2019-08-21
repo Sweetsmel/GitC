@@ -13,45 +13,45 @@ using WEBAPIRESTFULL.Models;
 
 namespace WEBAPIRESTFULL.Controllers
 {
-    [EnableCors(origins: "*", headers:"*", methods:"*")]
-    public class AutoresController : ApiController
+    [EnableCors(origins: "*", headers: "*", methods: "*")]
+    public class GenerosController : ApiController
     {
         private BibliotecaContextDB db = new BibliotecaContextDB();
 
-        // GET: api/Autores
-        public IQueryable<Autores> GetAutores()
+        // GET: api/Generos
+        public IQueryable<Generos> GetGeneros()
         {
-            return db.Autores.Where(x => x.Ativo ==true);
+            return db.Generos.Where(x => x.Ativo == true);
         }
 
-        // GET: api/Autores/5
-        [ResponseType(typeof(Autores))]
-        public IHttpActionResult GetAutores(int id)
+        // GET: api/Generos/5
+        [ResponseType(typeof(Generos))]
+        public IHttpActionResult GetGeneros(int id)
         {
-            Autores autores = db.Autores.Find(id);
-            if (autores == null)
+            Generos generos = db.Generos.Find(id);
+            if (generos == null)
             {
                 return NotFound();
             }
 
-            return Ok(autores);
+            return Ok(generos);
         }
 
-        // PUT: api/Autores/5
+        // PUT: api/Generos/5
         [ResponseType(typeof(void))]
-        public IHttpActionResult PutAutores(int id, Autores autores)
+        public IHttpActionResult PutGeneros(int id, Generos generos)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            if (id != autores.Id)
+            if (id != generos.Id)
             {
                 return BadRequest();
             }
 
-            db.Entry(autores).State = EntityState.Modified;
+            db.Entry(generos).State = EntityState.Modified;
 
             try
             {
@@ -59,7 +59,7 @@ namespace WEBAPIRESTFULL.Controllers
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!AutoresExists(id))
+                if (!GenerosExists(id))
                 {
                     return NotFound();
                 }
@@ -72,36 +72,36 @@ namespace WEBAPIRESTFULL.Controllers
             return StatusCode(HttpStatusCode.NoContent);
         }
 
-        // POST: api/Autores
-        [ResponseType(typeof(Autores))]
-        public IHttpActionResult PostAutores(Autores autores)
+        // POST: api/Generos
+        [ResponseType(typeof(Generos))]
+        public IHttpActionResult PostGeneros(Generos generos)
         {
             if (!ModelState.IsValid)
             {
-                if (ModelState.Keys.First().ToString() != "autores.Id")
+                if (ModelState.Keys.First().ToString() != "generos.Id")
                     return BadRequest(ModelState);
             }
 
-            db.Autores.Add(autores);
+            db.Generos.Add(generos);
             db.SaveChanges();
 
-            return CreatedAtRoute("DefaultApi", new { id = autores.Id }, autores);
+            return CreatedAtRoute("DefaultApi", new { id = generos.Id }, generos);
         }
 
-        // DELETE: api/Autores/5
-        [ResponseType(typeof(Autores))]
-        public IHttpActionResult DeleteAutores(int id)
+        // DELETE: api/Generos/5
+        [ResponseType(typeof(Generos))]
+        public IHttpActionResult DeleteGeneros(int id)
         {
-            Autores autores = db.Autores.Find(id);
-            if (autores == null)
+            Generos generos = db.Generos.Find(id);
+            if (generos == null)
             {
                 return NotFound();
             }
 
-            db.Autores.Find(id).Ativo = false;  //não remover, apenas deixar desativados
+            db.Generos.Find(id).Ativo = false;
             db.SaveChanges();
 
-            return Ok(autores);
+            return Ok(generos);
         }
 
         protected override void Dispose(bool disposing)
@@ -113,9 +113,9 @@ namespace WEBAPIRESTFULL.Controllers
             base.Dispose(disposing);
         }
 
-        private bool AutoresExists(int id)
+        private bool GenerosExists(int id)
         {
-            return db.Autores.Count(e => e.Id == id) > 0;
+            return db.Generos.Count(e => e.Id == id) > 0;
         }
     }
 }

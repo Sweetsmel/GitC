@@ -13,45 +13,45 @@ using WEBAPIRESTFULL.Models;
 
 namespace WEBAPIRESTFULL.Controllers
 {
-    [EnableCors(origins: "*", headers:"*", methods:"*")]
-    public class AutoresController : ApiController
+    [EnableCors(origins: "*", headers: "*", methods: "*")]
+    public class LivrosController : ApiController
     {
         private BibliotecaContextDB db = new BibliotecaContextDB();
 
-        // GET: api/Autores
-        public IQueryable<Autores> GetAutores()
+        // GET: api/Livros
+        public IQueryable<Livros> GetLivros()
         {
-            return db.Autores.Where(x => x.Ativo ==true);
+            return db.Livros.Where(x => x.Ativo == true);
         }
 
-        // GET: api/Autores/5
-        [ResponseType(typeof(Autores))]
-        public IHttpActionResult GetAutores(int id)
+        // GET: api/Livros/5
+        [ResponseType(typeof(Livros))]
+        public IHttpActionResult GetLivros(int id)
         {
-            Autores autores = db.Autores.Find(id);
-            if (autores == null)
+            Livros livros = db.Livros.Find(id);
+            if (livros == null)
             {
                 return NotFound();
             }
 
-            return Ok(autores);
+            return Ok(livros);
         }
 
-        // PUT: api/Autores/5
+        // PUT: api/Livros/5
         [ResponseType(typeof(void))]
-        public IHttpActionResult PutAutores(int id, Autores autores)
+        public IHttpActionResult PutLivros(int id, Livros livros)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            if (id != autores.Id)
+            if (id != livros.Id)
             {
                 return BadRequest();
             }
 
-            db.Entry(autores).State = EntityState.Modified;
+            db.Entry(livros).State = EntityState.Modified;
 
             try
             {
@@ -59,7 +59,7 @@ namespace WEBAPIRESTFULL.Controllers
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!AutoresExists(id))
+                if (!LivrosExists(id))
                 {
                     return NotFound();
                 }
@@ -72,36 +72,37 @@ namespace WEBAPIRESTFULL.Controllers
             return StatusCode(HttpStatusCode.NoContent);
         }
 
-        // POST: api/Autores
-        [ResponseType(typeof(Autores))]
-        public IHttpActionResult PostAutores(Autores autores)
+        // POST: api/Livros
+        [ResponseType(typeof(Livros))]
+
+        public IHttpActionResult PostLivros(Livros livros)
         {
             if (!ModelState.IsValid)
             {
-                if (ModelState.Keys.First().ToString() != "autores.Id")
+                if (ModelState.Keys.First().ToString() != "livros.Id")
                     return BadRequest(ModelState);
             }
 
-            db.Autores.Add(autores);
+            db.Livros.Add(livros);
             db.SaveChanges();
 
-            return CreatedAtRoute("DefaultApi", new { id = autores.Id }, autores);
+            return CreatedAtRoute("DefaultApi", new { id = livros.Id }, livros);
         }
 
-        // DELETE: api/Autores/5
-        [ResponseType(typeof(Autores))]
-        public IHttpActionResult DeleteAutores(int id)
+        // DELETE: api/Livros/5
+        [ResponseType(typeof(Livros))]
+        public IHttpActionResult DeleteLivros(int id)
         {
-            Autores autores = db.Autores.Find(id);
-            if (autores == null)
+            Livros livros = db.Livros.Find(id);
+            if (livros == null)
             {
                 return NotFound();
             }
 
-            db.Autores.Find(id).Ativo = false;  //não remover, apenas deixar desativados
+            db.Livros.Find(id).Ativo = false;
             db.SaveChanges();
 
-            return Ok(autores);
+            return Ok(livros);
         }
 
         protected override void Dispose(bool disposing)
@@ -113,9 +114,9 @@ namespace WEBAPIRESTFULL.Controllers
             base.Dispose(disposing);
         }
 
-        private bool AutoresExists(int id)
+        private bool LivrosExists(int id)
         {
-            return db.Autores.Count(e => e.Id == id) > 0;
+            return db.Livros.Count(e => e.Id == id) > 0;
         }
     }
 }
